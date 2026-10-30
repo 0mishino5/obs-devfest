@@ -1,0 +1,168 @@
+{
+  "fecha": "2026-10-30",
+  "carpeta_motion_loops": "https://drive.google.com/drive/folders/1eT9oPpePTrZobBRW-sn2v1C2fZpRae-y",
+  "recursos": [
+    {
+      "archivo": "04_Transiciones/Oficiales/DF26_SaveTheDate.mp4",
+      "bytes": 1243841,
+      "sha256": "4e5964cf4e8fb93e2399e6911fa31875a0af133ee409d6cc346d30f077cef89a",
+      "origen": "https://drive.google.com/file/d/1FO_WWb2zAo4Y7xcl517hup8AQl4XIQzt/view"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image63.gif",
+      "bytes": 2407334,
+      "sha256": "c6e1950d1009f18ed65497fe44ff222d7e79694250e1135695178c8e4330824b",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/DF26_MakeNewFriends.mp4",
+      "bytes": 1198274,
+      "sha256": "10f2b09b53d4fcde89ff2c278216bc44ed87446dbae6623cf5c4c43a75c03a87",
+      "origen": "https://drive.google.com/file/d/1ZPVysT4TYi6QZ6l4v1i9Qh9ktPFEmpJ0/view"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image62.gif",
+      "bytes": 1914356,
+      "sha256": "8c6e6a4ab91bf0ee4f93b555f6a25562f93906a4e1c9f0ac9f22e755d5f0f70e",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image74.gif",
+      "bytes": 1781467,
+      "sha256": "cc8e7a7224dba785eac6ad012fe5d307d2a46164e31b7795baf704731c20248b",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image60.gif",
+      "bytes": 2229699,
+      "sha256": "858cfc91f06de41b984d1ab6a894d7b12c5c6007c11966d8c911b73f9c322503",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image75.gif",
+      "bytes": 4955065,
+      "sha256": "c5b90903301c75c0f99981a190ee4f230b3a14297ff822d9a1b5d8dc29583c26",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image71.gif",
+      "bytes": 3089822,
+      "sha256": "e150b4e989c0379490bc92a36e61647f5f91dfdfa3ea01c301593d7c0869cee5",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image59.gif",
+      "bytes": 2137944,
+      "sha256": "d7eccbd51c39c845d5125f8f89467e839a44bfb7f4ba69917b94300d2067860e",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image70.gif",
+      "bytes": 6584640,
+      "sha256": "a4d1c20d922591b1d3533d1fe3d1ee2322c35892adb03c485b297ffe0e28fe16",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image73.gif",
+      "bytes": 6419558,
+      "sha256": "9054043b391449ac87f76d1bc5409a6d43f55ac8bc858bf8676746119ee78af3",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image67.gif",
+      "bytes": 5483285,
+      "sha256": "19ffdf8d1c6f2c255f0c80db266f2bd3f53cc7ca16ead4c8046e89a62ca95717",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image159.gif",
+      "bytes": 6747274,
+      "sha256": "b36bf95944cc0335bc298769837c085765ed06ddc83e75d605b173f3ba3d62cd",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image69.gif",
+      "bytes": 5007869,
+      "sha256": "118451673d2e6883c9af3dc9697fd6ad04c2c0ac3d3c3950b2085b4a90d44875",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image166.gif",
+      "bytes": 2375911,
+      "sha256": "09b0fc6494ed71cdc661813fe503d0049343342e2d4770bc3cdf599fb85a12d5",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/Guia_image68.gif",
+      "bytes": 2624328,
+      "sha256": "c03ee00e4810f78e081ac3a4621402925ab3c724447d1056510a06cd56ca9066",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/DF26_JoinUs.mp4",
+      "bytes": 1361912,
+      "sha256": "7a46003209253a4c59dccc18435735931d3d421b4ffddeb4c1796c112d6999a3",
+      "origen": "https://drive.google.com/file/d/1YNQcx111G_B1W1uGtIKz7mBV4LOs7j2U/view"
+    },
+    {
+      "archivo": "04_Transiciones/Oficiales/DF26_URL.mp4",
+      "bytes": 1218556,
+      "sha256": "37ff82065f314906f2ae6fe73ffda1007c95df832f79bc71f7b3704a3e139be3",
+      "origen": "https://drive.google.com/file/d/1bu9ToJLMpJdWfzEJ6aDjJ1FphiS32bWc/view"
+    },
+    {
+      "archivo": "01_Identidad/fuentes/GoogleSansMono-Regular.ttf",
+      "bytes": 19844,
+      "sha256": "02e8cd5947bcfd7905a1e8bd25562095cd62b20a8f5c6c03ac21ff95975316e5",
+      "origen": "https://drive.google.com/file/d/1b3M1r48pT3W2oCfNoCtthtxK0UZsagsl/view"
+    },
+    {
+      "archivo": "01_Identidad/fuentes/GoogleSans-Bold.ttf",
+      "bytes": 2148428,
+      "sha256": "9dc62de94a9494562310708e39d6afc4fe80a2823f65dd0ec5021dead2067dbd",
+      "origen": "https://drive.google.com/file/d/1ytzQHaVPTstjxCU7G1Jix4-9NVOvuIIk/view"
+    },
+    {
+      "archivo": "01_Identidad/fuentes/GoogleSans-Regular.ttf",
+      "bytes": 2119572,
+      "sha256": "b8b46f6a754e169cd7addaf1a4311048e425545f5eb8b8223c3f3a5546870cfc",
+      "origen": "https://drive.google.com/file/d/1ziIDr0XDGm8jWiDaLQ2qAcsMOHzJtKEf/view"
+    },
+    {
+      "archivo": "01_Identidad/oficial/devfest.png",
+      "bytes": 65867,
+      "sha256": "29913f2b82aa0d02183d307b9d449ace6e679f948f6eebf865b16fb142311cd8",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "01_Identidad/oficial/devfest_2026.png",
+      "bytes": 56898,
+      "sha256": "adb1e650929d11391f7510921086d222a8a4eb2de1467034d74bc8657bde7eae",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "01_Identidad/oficial/gdg_horizontal.png",
+      "bytes": 84018,
+      "sha256": "a71c426484d39e7665d397c94465cc6d4f320727e8eb88cf077580f0d096a6e0",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    },
+    {
+      "archivo": "01_Identidad/oficial/glifos_color.png",
+      "bytes": 100149,
+      "sha256": "2a6e33fb4abbe4b6eb3eaa7fee9054ea4297fc3a42f8e0c6064ed4db1dd5ac84",
+      "origen": "Medio incrustado en las guías PPTX suministradas por el organizador"
+    }
+  ],
+  "guias_suministradas": [
+    {
+      "archivo": "[External] Google Developer Groups - Brand Guide for Organizers (1).pptx",
+      "diapositivas": 55,
+      "sha256": "05cc9849b1fdd030d9b1b0ea0aa373a7cb1f8dd3304db84c46766d22a5401110"
+    },
+    {
+      "archivo": "[External] DevFest 2026 Brand Guide (goo.gle_devfest26-brand-guide) (2).pptx",
+      "diapositivas": 73,
+      "sha256": "52ab5cfc8165dab6e9b1e79d921a2d749c2f82409a2aff0271251836bd16750b"
+    }
+  ]
+}

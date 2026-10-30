@@ -1,0 +1,18 @@
+{
+  "grabacion": "/Users/Shared/DevFest_Arequipa_2026_Marca/Grabaciones/Track_1/2026-10-30 16-28-11.mkv",
+  "streaming": false,
+  "recording": false,
+  "stats": {
+    "activeFps": 30.000000300000007,
+    "availableDiskSpace": 63975.11328125,
+    "averageFrameRenderTime": 3.453208,
+    "cpuUsage": 3.2294792684032076,
+    "memoryUsage": 817.359375,
+    "outputSkippedFrames": 0,
+    "outputTotalFrames": 359,
+    "renderSkippedFrames": 0,
+    "renderTotalFrames": 11712,
+    "webSocketSessionIncomingMessages": 17,
+    "webSocketSessionOutgoingMessages": 17
+  }
+}

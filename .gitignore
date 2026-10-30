@@ -1,0 +1,22 @@
+# Configuración privada y estado de cada Mac
+.env
+.env.*
+!.env.example
+**/estado-local.json
+**/Respaldos_locales/
+**/respaldos/
+**/obs-studio/
+**/plugin_config/
+**/secrets/
+**/*.key
+**/*.pem
+
+# Grabaciones futuras; el ensayo entregado vive en 09_Pruebas
+/Grabaciones/
+
+# Archivos locales
+.DS_Store
+**/.DS_Store
+node_modules/
+*.log
+*.tmp
