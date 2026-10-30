@@ -14,6 +14,9 @@ Incluye código fuente del panel y servidor, HTML/CSS/JavaScript de emisión, co
 - [Resultados y límites de las pruebas](09_Pruebas/RESULTADOS.md)
 - [Procedencia de los recursos oficiales](08_Guias/RECURSOS_OFICIALES.json)
 - Guías originales completas en `10_Referencias/Guias`.
+- [Inventario de los cinco adjuntos originales](10_Referencias/INVENTARIO_ENTREGAS.md).
+- [Ideas, decisiones y requisitos acordados](08_Guias/IDEAS_DECISIONES_Y_REQUISITOS.md).
+- Primera versión y capturas de desarrollo conservadas en `11_Historial`.
 
 Los respaldos privados de OBS y sus claves se conservan fuera del repositorio. El estado de cada Mac y las futuras grabaciones se excluyen mediante `.gitignore`. Las fuentes, marcas y recursos de terceros conservan sus condiciones de uso; esta carpeta no les asigna una licencia libre nueva.
 
