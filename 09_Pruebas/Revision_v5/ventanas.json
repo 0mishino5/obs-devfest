@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "track": 1,
+      "frame": "marco_mixta",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 1,
+      "frame": "marco_preguntas",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 1,
+      "frame": "marco_camara",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 1,
+      "frame": "marco_diapositivas",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 2,
+      "frame": "marco_mixta",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 2,
+      "frame": "marco_preguntas",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 2,
+      "frame": "marco_camara",
+      "contentFullyTransparent": true
+    },
+    {
+      "track": 2,
+      "frame": "marco_diapositivas",
+      "contentFullyTransparent": true
+    }
+  ]
+}

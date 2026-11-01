@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-01T13:15:53.434Z",
+  "version": "diseno-profesional-v4-sin-simbolo",
+  "rejectedSymbolRemoved": true,
+  "tracks": [
+    {
+      "track": 1,
+      "scenes": 13,
+      "resources": 11,
+      "longName": "Cristians Alberto Bregante Tintaya",
+      "motionPauseAndResume": true
+    },
+    {
+      "track": 2,
+      "scenes": 13,
+      "resources": 11,
+      "longName": "Henry Keniding Tarazona Lazaro",
+      "motionPauseAndResume": true
+    }
+  ],
+  "guidesUnchanged": true,
+  "before": {
+    "activeFps": 30.000000300000007,
+    "availableDiskSpace": 68294.671875,
+    "averageFrameRenderTime": 2.94667,
+    "cpuUsage": 0.9349036603467777,
+    "memoryUsage": 272.51953125,
+    "outputSkippedFrames": 0,
+    "outputTotalFrames": 968,
+    "renderSkippedFrames": 12,
+    "renderTotalFrames": 564732,
+    "webSocketSessionIncomingMessages": 4,
+    "webSocketSessionOutgoingMessages": 4
+  },
+  "after": {
+    "activeFps": 30.000000300000007,
+    "availableDiskSpace": 68283.69140625,
+    "averageFrameRenderTime": 5.277354,
+    "cpuUsage": 3.163068748958621,
+    "memoryUsage": 336.19921875,
+    "outputSkippedFrames": 0,
+    "outputTotalFrames": 968,
+    "renderSkippedFrames": 28,
+    "renderTotalFrames": 567124,
+    "webSocketSessionIncomingMessages": 187,
+    "webSocketSessionOutgoingMessages": 191
+  }
+}

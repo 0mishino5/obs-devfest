@@ -8,7 +8,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_prueba_camara.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_prueba_camara.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -34,7 +34,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_prueba_diapositivas.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_prueba_diapositivas.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -57,13 +57,14 @@
       "prev_ver": 537001986,
       "name": "T2 · Cámara 1 · configurar",
       "uuid": "2dd01c8c-7188-41c4-9bb8-2f4588fed532",
-      "id": "av_capture_input",
-      "versioned_id": "av_capture_input_v2",
+      "id": "dshow_input",
+      "versioned_id": "dshow_input",
       "settings": {
-        "uid": "",
-        "use_preset": true,
-        "preset": "AVCaptureSessionPreset1920x1080",
-        "enable_audio": false
+        "video_device_id": "",
+        "res_type": 0,
+        "active": true,
+        "use_custom_audio_device": false,
+        "audio_output_mode": 0
       },
       "mixers": 0,
       "sync": 0,
@@ -91,13 +92,14 @@
       "prev_ver": 537001986,
       "name": "T2 · Cámara 2 · configurar",
       "uuid": "834bac70-cfb2-4884-8fec-06f4113488ec",
-      "id": "av_capture_input",
-      "versioned_id": "av_capture_input_v2",
+      "id": "dshow_input",
+      "versioned_id": "dshow_input",
       "settings": {
-        "uid": "",
-        "use_preset": true,
-        "preset": "AVCaptureSessionPreset1920x1080",
-        "enable_audio": false
+        "video_device_id": "",
+        "res_type": 0,
+        "active": true,
+        "use_custom_audio_device": false,
+        "audio_output_mode": 0
       },
       "mixers": 0,
       "sync": 0,
@@ -125,13 +127,14 @@
       "prev_ver": 537001986,
       "name": "T2 · Diapositivas HDMI · configurar",
       "uuid": "0819c5be-fe38-4b69-b037-0479d1e79c26",
-      "id": "av_capture_input",
-      "versioned_id": "av_capture_input_v2",
+      "id": "dshow_input",
+      "versioned_id": "dshow_input",
       "settings": {
-        "uid": "",
-        "use_preset": true,
-        "preset": "AVCaptureSessionPreset1920x1080",
-        "enable_audio": false
+        "video_device_id": "",
+        "res_type": 0,
+        "active": true,
+        "use_custom_audio_device": false,
+        "audio_output_mode": 0
       },
       "mixers": 0,
       "sync": 0,
@@ -157,16 +160,16 @@
     },
     {
       "prev_ver": 537001986,
-      "name": "T2 · Diapositivas macOS · configurar",
+      "name": "T2 · Diapositivas Windows · configurar",
       "uuid": "3e169250-13e2-4fd5-8108-832116ef97c9",
-      "id": "screen_capture",
-      "versioned_id": "screen_capture",
+      "id": "window_capture",
+      "versioned_id": "window_capture",
       "settings": {
+        "window": "",
+        "method": 0,
+        "cursor": false,
         "capture_audio": false,
-        "type": 1,
-        "window": 0,
-        "show_cursor": false,
-        "hide_obs": true
+        "client_area": true
       },
       "mixers": 0,
       "sync": 0,
@@ -194,8 +197,8 @@
       "prev_ver": 537001986,
       "name": "T2 · Audio de sala",
       "uuid": "9c4fc53c-fc19-4bc4-aed5-cd2e90c42be5",
-      "id": "coreaudio_input_capture",
-      "versioned_id": "coreaudio_input_capture",
+      "id": "wasapi_input_capture",
+      "versioned_id": "wasapi_input_capture",
       "settings": {
         "device_id": "disabled"
       },
@@ -229,7 +232,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_marco_mixta.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_marco_mixta.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -262,7 +265,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_marco_completa.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_marco_completa.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -295,7 +298,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_rotulo.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_rotulo.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -336,7 +339,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_rotulo_compacto.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_rotulo_compacto.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -376,7 +379,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_inicio.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_inicio.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -403,7 +406,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_inicio.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_inicio.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -443,7 +446,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_proxima.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_proxima.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -470,7 +473,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_proxima.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_proxima.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -510,7 +513,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_espera.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_espera.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -537,7 +540,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_espera.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_espera.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -577,7 +580,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_almuerzo.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_almuerzo.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -604,7 +607,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_almuerzo.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_almuerzo.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -644,7 +647,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_patrocinadores.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_patrocinadores.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -671,7 +674,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_patrocinadores.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_patrocinadores.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -711,7 +714,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_problemas.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_problemas.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -738,7 +741,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_problemas.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_problemas.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -778,7 +781,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t2_cierre.png"
+        "file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\02_Graficos\\t2_cierre.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -805,7 +808,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_cierre.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_cierre.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -846,7 +849,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-01.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-01.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -887,7 +890,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-02.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-02.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -928,7 +931,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-03.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-03.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -969,7 +972,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-04.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-04.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1010,7 +1013,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-05.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-05.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1051,7 +1054,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-06.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-06.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1092,7 +1095,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-07.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-07.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1133,7 +1136,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_ponente_t2-08.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_ponente_t2-08.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1490,7 +1493,7 @@
             "private_settings": {}
           },
           {
-            "name": "T2 · Diapositivas macOS · configurar",
+            "name": "T2 · Diapositivas Windows · configurar",
             "source_uuid": "3e169250-13e2-4fd5-8108-832116ef97c9",
             "visible": false,
             "locked": true,
@@ -2120,8 +2123,8 @@
             "private_settings": {}
           },
           {
-            "name": "T2 · Marco completo",
-            "source_uuid": "847b0bec-80cc-4cc5-b497-db79f1e7e9de",
+            "name": "T2 · Marco cámara",
+            "source_uuid": "1c42d3ed-68dc-4bb8-ac8c-76940e71dc80",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -2368,8 +2371,8 @@
             "private_settings": {}
           },
           {
-            "name": "T2 · Marco completo",
-            "source_uuid": "847b0bec-80cc-4cc5-b497-db79f1e7e9de",
+            "name": "T2 · Marco diapositivas",
+            "source_uuid": "1710da58-a4ac-43c3-a1c7-1272bdb6173a",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -2602,8 +2605,8 @@
             "private_settings": {}
           },
           {
-            "name": "T2 · Marco mixto",
-            "source_uuid": "d18bbfcd-a41c-4876-a42c-a374ed788bfe",
+            "name": "T2 · Marco preguntas",
+            "source_uuid": "044c9632-77e0-48de-ad9d-b891c744c5bb",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -4370,7 +4373,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_banner.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_banner.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -4395,7 +4398,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t2_oficial.html",
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_oficial.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -4490,6 +4493,108 @@
       "hotkeys": {},
       "monitoring_type": 0,
       "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T2 · Marco cámara",
+      "uuid": "1c42d3ed-68dc-4bb8-ac8c-76940e71dc80",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_marco_camara.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T2 · Marco diapositivas",
+      "uuid": "1710da58-a4ac-43c3-a1c7-1272bdb6173a",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_marco_diapositivas.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T2 · Marco preguntas",
+      "uuid": "044c9632-77e0-48de-ad9d-b891c744c5bb",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\03_HTML\\t2_marco_preguntas.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
     }
   ],
   "groups": [],
@@ -4553,7 +4658,7 @@
       "name": "DevFest · Glifos",
       "id": "obs_stinger_transition",
       "settings": {
-        "path": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/04_Transiciones/devfest_glifos.webm",
+        "path": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\04_Transiciones\\devfest_estudio_v5.webm",
         "transition_point": 600,
         "tp_type": 0,
         "audio_monitoring": 0,

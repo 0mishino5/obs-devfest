@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-01T14:24:29.396Z",
+  "state": {
+    "1": {
+      "speakerId": "t1-01",
+      "visible": true,
+      "revision": 37,
+      "motion": true,
+      "banner": "GDG Arequipa · @gdgaqp · #DevFestArequipa2026",
+      "bannerVisible": true
+    },
+    "2": {
+      "speakerId": "t2-01",
+      "visible": true,
+      "revision": 9,
+      "motion": true,
+      "banner": "GDG Arequipa · @gdgaqp · #DevFestArequipa2026",
+      "bannerVisible": true
+    }
+  },
+  "collection": "DEVFEST_AREQUIPA_2026_TRACK_1_MARCA",
+  "program": "05 · Preguntas y respuestas",
+  "preview": "04 · Diapositivas completas",
+  "studio": true,
+  "transition": "DevFest · Glifos"
+}

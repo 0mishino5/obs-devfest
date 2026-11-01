@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-01T13:59:56.067Z",
+  "variants": [
+    {
+      "track": 1,
+      "scene": "03 · Cámara del ponente",
+      "frame": "T1 · Marco cámara"
+    },
+    {
+      "track": 1,
+      "scene": "04 · Diapositivas completas",
+      "frame": "T1 · Marco diapositivas"
+    },
+    {
+      "track": 1,
+      "scene": "05 · Preguntas y respuestas",
+      "frame": "T1 · Marco preguntas"
+    },
+    {
+      "track": 2,
+      "scene": "03 · Cámara del ponente",
+      "frame": "T2 · Marco cámara"
+    },
+    {
+      "track": 2,
+      "scene": "04 · Diapositivas completas",
+      "frame": "T2 · Marco diapositivas"
+    },
+    {
+      "track": 2,
+      "scene": "05 · Preguntas y respuestas",
+      "frame": "T2 · Marco preguntas"
+    }
+  ]
+}

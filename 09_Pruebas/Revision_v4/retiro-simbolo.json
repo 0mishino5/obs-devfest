@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-01T13:17:51.092Z",
+  "rejectedSymbolRemoved": true,
+  "decodedTransitionAlpha": [
+    {
+      "frame": 0,
+      "min": 0,
+      "max": 0
+    },
+    {
+      "frame": 18,
+      "min": 255,
+      "max": 255
+    },
+    {
+      "frame": 35,
+      "min": 0,
+      "max": 0
+    }
+  ],
+  "updatedScreens": 26,
+  "updatedFallbacks": 22,
+  "sharedFiles": 108,
+  "guidesUnchanged": true,
+  "visualReview": [
+    "Bienvenida con animación oficial y sin símbolo artificial",
+    "Diapositiva de prueba con tipografía y sin ilustración",
+    "Transición con texto DevFest y sin símbolo"
+  ]
+}

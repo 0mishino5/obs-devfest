@@ -1,11 +1,17 @@
 * text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
 *.command text eol=lf
+*.cmd text eol=crlf
 *.mjs text eol=lf
 *.js text eol=lf
 *.css text eol=lf
+*.svg text eol=lf
+*.py text eol=lf
 *.html text eol=lf
 *.md text eol=lf
 *.json text eol=lf
+*.ini text eol=lf
 *.pptx filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mkv filter=lfs diff=lfs merge=lfs -text
@@ -14,3 +20,10 @@
 *.ttf filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.csv -text
+
+# Conservar los bytes de los informes verificados
+09_Pruebas/Revision_v4/ventanas.json -text
+09_Pruebas/Revision_v5/paleta-ventanas.json -text
+09_Pruebas/Revision_v5/ventanas.json -text
+11_Historial/Antes_Paleta_Equilibrada_20261101/09_Pruebas/Revision_v5/ventanas.json -text
+11_Historial/Antes_Retirar_Simbolo_20261101/09_Pruebas/Revision_v4/ventanas.json -text

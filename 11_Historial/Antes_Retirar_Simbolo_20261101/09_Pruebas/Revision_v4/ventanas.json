@@ -1,0 +1,28 @@
+{
+  "wideViewportTransparent": [
+    {
+      "track": 1,
+      "alphas": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "track": 2,
+      "alphas": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

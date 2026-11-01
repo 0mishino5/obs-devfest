@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-01T14:28:06.582Z",
+  "file": "diseno-escenas-v5.mp4",
+  "localRecording": true,
+  "streaming": false,
+  "scenes": [
+    "01 · Bienvenida",
+    "02 · Diapositivas + ponente",
+    "03 · Cámara del ponente",
+    "04 · Diapositivas completas",
+    "05 · Preguntas y respuestas",
+    "06 · Próxima charla",
+    "07 · Espera",
+    "08 · Almuerzo",
+    "09 · Patrocinadores",
+    "10 · Problemas técnicos",
+    "11 · Cierre"
+  ],
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "renderSkipped": 0,
+  "encodingSkipped": 0,
+  "averageFrameRenderTime": 4.161748
+}

@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-01T14:26:25.348Z",
+  "scene": "05 · Preguntas y respuestas",
+  "palette": {
+    "background": "#c3ecf6",
+    "speakerPanel": "#ccf6c5",
+    "slidesFrame": "#ffe7a5",
+    "accent": "#4285f4"
+  },
+  "largePinkAreasRemoved": true,
+  "slidesDemoUpdated": true,
+  "controlsAndAnimationsPreserved": true,
+  "tracks": [
+    1,
+    2
+  ]
+}

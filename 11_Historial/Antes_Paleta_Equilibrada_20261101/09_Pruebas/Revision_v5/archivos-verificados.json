@@ -1,0 +1,23 @@
+[
+  {
+    "repo": "obs-devfest-windows",
+    "panelDataAndGuidesUnchanged": true,
+    "mainScenes": 11,
+    "extraScenes": 2,
+    "auxiliaryScenes": 3
+  },
+  {
+    "repo": "obs-devfest-mac",
+    "panelDataAndGuidesUnchanged": true,
+    "mainScenes": 11,
+    "extraScenes": 2,
+    "auxiliaryScenes": 3
+  },
+  {
+    "repo": "obs-devfest",
+    "panelDataAndGuidesUnchanged": true,
+    "mainScenes": 11,
+    "extraScenes": 2,
+    "auxiliaryScenes": 3
+  }
+]

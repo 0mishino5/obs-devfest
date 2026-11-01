@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-01T08:05:37.901Z",
+  "staticButtonsBefore": 13,
+  "staticButtonsAfter": 13,
+  "totalButtonsInBrowser": 26,
+  "noAddedControls": true,
+  "draftSurvivedReload": true,
+  "draftSurvivedBackendRestart": true,
+  "automaticallyReconnected": true,
+  "originalBannerRestored": true,
+  "previewAndTakeVerified": true,
+  "directModeVerified": true,
+  "technicalPauseImmediate": true,
+  "wrongAuditoriumBlocked": true,
+  "unconfiguredAudioDisabled": true,
+  "observedOutput": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  }
+}
