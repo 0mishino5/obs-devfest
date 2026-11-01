@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-31",
+  "platform": "windows",
+  "tracks": [
+    {
+      "track": 1,
+      "scenes": [
+        "01 · Bienvenida",
+        "02 · Diapositivas + ponente",
+        "03 · Cámara del ponente",
+        "04 · Diapositivas completas",
+        "05 · Preguntas y respuestas",
+        "06 · Próxima charla",
+        "07 · Espera",
+        "08 · Almuerzo",
+        "09 · Patrocinadores",
+        "10 · Problemas técnicos",
+        "11 · Cierre",
+        "12 · Diapositivas limpias",
+        "13 · Animación oficial DevFest"
+      ],
+      "speakers": 7,
+      "studioPreviewAndTake": true,
+      "lowerThirdAndBanner": true,
+      "motionMuteRefresh": true,
+      "transitions": 3,
+      "screenshot": true
+    },
+    {
+      "track": 2,
+      "scenes": [
+        "01 · Bienvenida",
+        "02 · Diapositivas + ponente",
+        "03 · Cámara del ponente",
+        "04 · Diapositivas completas",
+        "05 · Preguntas y respuestas",
+        "06 · Próxima charla",
+        "07 · Espera",
+        "08 · Almuerzo",
+        "09 · Patrocinadores",
+        "10 · Problemas técnicos",
+        "11 · Cierre",
+        "12 · Diapositivas limpias",
+        "13 · Animación oficial DevFest"
+      ],
+      "speakers": 8,
+      "studioPreviewAndTake": true,
+      "lowerThirdAndBanner": true,
+      "motionMuteRefresh": true,
+      "transitions": 3,
+      "screenshot": true
+    }
+  ],
+  "streamingStarted": false,
+  "physicalDevicesTested": false,
+  "obsVersion": "32.1.0",
+  "controlWithoutOriginRejected": true
+}

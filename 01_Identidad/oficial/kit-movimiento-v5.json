@@ -1,0 +1,25 @@
+{
+  "version": "estudio-v5",
+  "source": "10_Referencias/Guias/DevFest_2026_Brand_Guide.pptx",
+  "sourceURL": "https://docs.google.com/presentation/d/1xspdc9b3AoVDQqietzwBllW4agG7rmg5bhH059NEbPU/edit",
+  "glyphSlide": 8,
+  "colorSlide": 10,
+  "atlasOriginal": true,
+  "atlasSHA256": "2a6e33fb4abbe4b6eb3eaa7fee9054ea4297fc3a42f8e0c6064ed4db1dd5ac84",
+  "palette": {
+    "blue": "#4285f4",
+    "green": "#34a853",
+    "yellow": "#f9ab00",
+    "red": "#ea4335",
+    "halftoneBlue": "#57caff",
+    "halftoneGreen": "#5cdb6d",
+    "halftoneYellow": "#ffd427",
+    "halftoneRed": "#ff7daf",
+    "pastelBlue": "#c3ecf6",
+    "pastelGreen": "#ccf6c5",
+    "pastelYellow": "#ffe7a5",
+    "pastelRed": "#f8d8d8",
+    "offWhite": "#f0f0f0",
+    "black": "#1e1e1e"
+  }
+}

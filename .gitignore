@@ -1,8 +1,9 @@
-# Configuración privada y estado de cada Mac
+# Configuración privada y estado de cada equipo
 .env
 .env.*
 !.env.example
 **/estado-local.json
+**/estado-demo.json
 **/Respaldos_locales/
 **/respaldos/
 **/obs-studio/
@@ -20,3 +21,4 @@
 node_modules/
 *.log
 *.tmp
+**/node_modules/

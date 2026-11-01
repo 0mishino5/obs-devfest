@@ -3,13 +3,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {OBS} from './obs.mjs';
+import crypto from 'node:crypto';
+import {packagePlatform, assertHost} from '../06_OBS/plataforma.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+assertHost();
 const PORT = Number(process.env.DEVFEST_PORT || 8787);
+if (PORT !== 8787) throw new Error('Los gráficos requieren el puerto 8787. Cierra el otro panel antes de continuar.');
 const BASE = `http://127.0.0.1:${PORT}`;
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, '05_Datos/produccion.json')));
+config.platform = packagePlatform();
+config.demo = process.env.DEVFEST_DEMO === '1';
+config.instance = crypto.createHash('sha256').update(ROOT).digest('hex').slice(0,16);
 const obs = new OBS();
-const stateFile = path.join(ROOT, '07_Control/estado-local.json');
+const stateFile = path.join(ROOT, config.demo ? '07_Control/estado-demo.json' : '07_Control/estado-local.json');
 let state = Object.fromEntries([1,2].map(t => [t,{speakerId:config.tracks[t-1].speakers[0].id, visible:false, revision:0, motion:true, banner:'GDG Arequipa · @gdgaqp · #DevFestArequipa2026', bannerVisible:true}]));
 try { const old=JSON.parse(fs.readFileSync(stateFile)); for (const t of [1,2]) state[t]={...state[t],...old[t],visible:false}; } catch {}
 const persist = () => fs.writeFileSync(stateFile, JSON.stringify(state, null, 2), {mode:0o600});
@@ -91,6 +98,11 @@ async function action(a) {
     }
     if (a.name==='Desvanecimiento') await obs.call('SetCurrentSceneTransitionDuration',{transitionDuration:300});
   } else if (a.action==='mute') {
+    if (!a.muted) {
+      const input=await obs.call('GetInputSettings',{inputName:tr.audio});
+      const device=input.inputSettings?.device_id;
+      if (!device || device==='disabled') throw new Error('Selecciona primero la consola o interfaz en la entrada Audio de sala de OBS.');
+    }
     await obs.call('SetInputMute',{inputName:tr.audio,inputMuted:!!a.muted});
   } else if (a.action==='refresh') {
     const inputs=await obs.call('GetInputList');
@@ -106,8 +118,16 @@ async function status() {
   const studio=await obs.call('GetStudioModeEnabled');
   const transition=(await obs.call('GetCurrentSceneTransition')).transitionName;
   let muted=true;
-  if (tr) muted=(await obs.call('GetInputMute',{inputName:tr.audio})).inputMuted;
-  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,state};
+  let audioConfigured=false;
+  if (tr) {
+    muted=(await obs.call('GetInputMute',{inputName:tr.audio})).inputMuted;
+    const input=await obs.call('GetInputSettings',{inputName:tr.audio});
+    audioConfigured=!!input.inputSettings?.device_id&&input.inputSettings.device_id!=='disabled';
+  }
+  const settings=await obs.call('GetVideoSettings');
+  const stats=await obs.call('GetStats');
+  const video={width:settings.outputWidth,height:settings.outputHeight,fps:settings.fpsNumerator/settings.fpsDenominator};
+  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,audioConfigured,video,activeFps:stats.activeFps,state};
 }
 const types={'.jpeg':'image/jpeg','.gif':'image/gif','.mp4':'video/mp4','.ttf':'font/ttf','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.webm':'video/webm','.md':'text/plain; charset=utf-8'};
 const server=http.createServer(async(req,res)=>{
@@ -137,12 +157,12 @@ const server=http.createServer(async(req,res)=>{
     }
     if (req.method!=='GET') return json(res,405,{error:'Método no permitido.'});
     const rel=decodeURIComponent(u.pathname==='/'?'/07_Control/index.html':u.pathname);
-    if (!/^\/(?:01_Identidad\/|02_Graficos\/|03_HTML\/|04_Transiciones\/|08_Guias\/|09_Pruebas\/|07_Control\/(?:index\.html|panel\.css|panel\.js)$)/.test(rel)) return json(res,404,{error:'Archivo no disponible.'});
+    if (!/^\/(?:01_Identidad\/|02_Graficos\/|03_HTML\/|04_Transiciones\/|08_Guias\/|09_Pruebas\/|07_Control\/(?:index\.html|panel\.css|panel\.js|guia-windows\.html)$)/.test(rel)) return json(res,404,{error:'Archivo no disponible.'});
     const file=path.resolve(ROOT,'.'+rel);
     if (!file.startsWith(ROOT+path.sep) || /(?:estado-local|servidor\.mjs|obs\.mjs)/.test(file) || !fs.existsSync(file) || !fs.statSync(file).isFile()) return json(res,404,{error:'Archivo no disponible.'});
     res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-cache','X-Content-Type-Options':'nosniff'});fs.createReadStream(file).pipe(res);
   }catch(e){json(res,400,{error:e.message});}
 });
-server.on('error',e=>{console.error(e.code==='EADDRINUSE'?`El puerto ${PORT} ya está ocupado. Si el panel está abierto, úsalo; de lo contrario cambia DEVFEST_PORT.`:e.message);process.exit(1);});
+server.on('error',e=>{console.error(e.code==='EADDRINUSE'?`El puerto ${PORT} ya está ocupado. Cierra el otro panel y vuelve a abrir esta carpeta.`:e.message);process.exit(1);});
 server.listen(PORT,'127.0.0.1',()=>console.log(`Panel DevFest: ${BASE}`));
-process.on('SIGINT',()=>{obs.close();server.close(()=>process.exit(0));});
+for (const signal of ['SIGINT','SIGTERM']) process.on(signal,()=>{obs.close();server.close(()=>process.exit(0));});
