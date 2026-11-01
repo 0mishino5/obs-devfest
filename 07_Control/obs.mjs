@@ -1,20 +1,27 @@
-import fs from 'node:fs';
-import os from 'node:os';
 import crypto from 'node:crypto';
+import path from 'node:path';
+import {obsConfigDir, readJSON} from '../06_OBS/plataforma.mjs';
 
 export class OBS {
-  constructor() { this.pending = new Map(); this.connected = false; this.counter = 0; }
+  constructor({configDir = obsConfigDir(), WebSocketImpl = globalThis.WebSocket, connectTimeout = 6000, requestTimeout = 7000} = {}) {
+    this.pending = new Map(); this.connected = false; this.counter = 0;
+    Object.assign(this, {configDir, WebSocketImpl, connectTimeout, requestTimeout});
+  }
   async connect() {
     if (this.connected) return;
     if (this.connecting) return this.connecting;
     this.connecting = new Promise((resolve, reject) => {
       let cfg;
-      try { cfg = JSON.parse(fs.readFileSync(os.homedir() + '/Library/Application Support/obs-studio/plugin_config/obs-websocket/config.json')); }
+      try { cfg = readJSON(path.join(this.configDir, 'plugin_config/obs-websocket/config.json')); }
       catch { reject(new Error('Activa el servidor WebSocket en Herramientas de OBS.')); return; }
-      const ws = this.ws = new WebSocket(`ws://127.0.0.1:${cfg.server_port || 4455}`);
-      const timer = setTimeout(() => { ws.close(); reject(new Error('OBS no responde. Abre OBS y activa WebSocket.')); }, 6000);
+      if (cfg.server_enabled === false) { reject(new Error('Habilita el servidor WebSocket en Herramientas de OBS.')); return; }
+      const port = Number(cfg.server_port || 4455);
+      if (!Number.isInteger(port) || port < 1 || port > 65535) { reject(new Error('Puerto WebSocket inválido.')); return; }
+      const ws = this.ws = new this.WebSocketImpl(`ws://127.0.0.1:${port}`);
+      const timer = setTimeout(() => { ws.close(); reject(new Error('OBS no responde. Abre OBS y activa WebSocket.')); }, this.connectTimeout);
       ws.onmessage = ({data}) => {
-        const p = JSON.parse(data);
+        let p;
+        try { p = JSON.parse(data); } catch { ws.close(); return; }
         if (p.op === 0) {
           const a = p.d.authentication;
           const authentication = a ? crypto.createHash('sha256').update(crypto.createHash('sha256').update(cfg.server_password + a.salt).digest('base64') + a.challenge).digest('base64') : undefined;
@@ -30,11 +37,11 @@ export class OBS {
           p.d.requestStatus.result ? q.resolve(p.d.responseData || {}) : q.reject(new Error(`${p.d.requestType}: ${p.d.requestStatus.comment || p.d.requestStatus.code}`));
         }
       };
-      ws.onerror = () => { clearTimeout(timer); reject(new Error('No se pudo conectar con OBS en esta Mac.')); };
-      ws.onclose = () => {
+      ws.onerror = () => { clearTimeout(timer); ws.close(); reject(new Error('No se pudo conectar con OBS en este equipo.')); };
+      ws.onclose = event => {
         clearTimeout(timer); this.connected = false; this.connecting = null;
         for (const q of this.pending.values()) { clearTimeout(q.timer); q.reject(new Error('OBS se desconectó.')); }
-        this.pending.clear(); reject(new Error('OBS cerró la conexión.'));
+        this.pending.clear(); reject(new Error(event?.code === 4009 ? 'La autenticación de OBS falló. Reinicia el panel después de revisar la contraseña en OBS.' : 'OBS cerró la conexión.'));
       };
     });
     try { await this.connecting; } catch (e) { this.connecting = null; throw e; }
@@ -44,7 +51,7 @@ export class OBS {
     if (this.changing) throw new Error('OBS está cambiando de colección o perfil. Espera un momento.');
     const requestId = String(++this.counter);
     return new Promise((resolve, reject) => {
-      const timer = setTimeout(() => { this.pending.delete(requestId); reject(new Error(`Tiempo agotado: ${requestType}`)); }, 7000);
+      const timer = setTimeout(() => { this.pending.delete(requestId); reject(new Error(`Tiempo agotado: ${requestType}`)); }, this.requestTimeout);
       this.pending.set(requestId, {resolve, reject, timer});
       this.ws.send(JSON.stringify({op:6,d:{requestType,requestId,requestData}}));
     });

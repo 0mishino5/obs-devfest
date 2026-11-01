@@ -8,7 +8,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_prueba_camara.png"
+        "file": "02_Graficos/t1_prueba_camara.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -34,7 +34,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_prueba_diapositivas.png"
+        "file": "02_Graficos/t1_prueba_diapositivas.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -229,7 +229,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_marco_mixta.html",
+        "local_file": "03_HTML/t1_marco_mixta.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -262,7 +262,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_marco_completa.html",
+        "local_file": "03_HTML/t1_marco_completa.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -295,7 +295,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_rotulo.html",
+        "local_file": "03_HTML/t1_rotulo.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -336,7 +336,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_rotulo_compacto.html",
+        "local_file": "03_HTML/t1_rotulo_compacto.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -376,7 +376,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_inicio.png"
+        "file": "02_Graficos/t1_inicio.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -403,7 +403,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_inicio.html",
+        "local_file": "03_HTML/t1_inicio.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -443,7 +443,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_proxima.png"
+        "file": "02_Graficos/t1_proxima.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -470,7 +470,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_proxima.html",
+        "local_file": "03_HTML/t1_proxima.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -510,7 +510,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_espera.png"
+        "file": "02_Graficos/t1_espera.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -537,7 +537,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_espera.html",
+        "local_file": "03_HTML/t1_espera.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -577,7 +577,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_almuerzo.png"
+        "file": "02_Graficos/t1_almuerzo.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -604,7 +604,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_almuerzo.html",
+        "local_file": "03_HTML/t1_almuerzo.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -644,7 +644,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_patrocinadores.png"
+        "file": "02_Graficos/t1_patrocinadores.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -671,7 +671,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_patrocinadores.html",
+        "local_file": "03_HTML/t1_patrocinadores.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -711,7 +711,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_problemas.png"
+        "file": "02_Graficos/t1_problemas.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -738,7 +738,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_problemas.html",
+        "local_file": "03_HTML/t1_problemas.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -778,7 +778,7 @@
       "id": "image_source",
       "versioned_id": "image_source",
       "settings": {
-        "file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/02_Graficos/t1_cierre.png"
+        "file": "02_Graficos/t1_cierre.png"
       },
       "mixers": 0,
       "sync": 0,
@@ -805,7 +805,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_cierre.html",
+        "local_file": "03_HTML/t1_cierre.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -846,7 +846,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-01.html",
+        "local_file": "03_HTML/t1_ponente_t1-01.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -887,7 +887,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-02.html",
+        "local_file": "03_HTML/t1_ponente_t1-02.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -928,7 +928,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-03.html",
+        "local_file": "03_HTML/t1_ponente_t1-03.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -969,7 +969,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-04.html",
+        "local_file": "03_HTML/t1_ponente_t1-04.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1010,7 +1010,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-05.html",
+        "local_file": "03_HTML/t1_ponente_t1-05.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1051,7 +1051,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-06.html",
+        "local_file": "03_HTML/t1_ponente_t1-06.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -1092,7 +1092,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_ponente_t1-07.html",
+        "local_file": "03_HTML/t1_ponente_t1-07.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -2079,8 +2079,8 @@
             "private_settings": {}
           },
           {
-            "name": "T1 · Marco completo",
-            "source_uuid": "c2c6ef1a-5950-4ded-a8cd-6f431b0ca83e",
+            "name": "T1 · Marco cámara",
+            "source_uuid": "31ac1cd9-334a-46b8-ae22-5e66a8cc6615",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -2327,8 +2327,8 @@
             "private_settings": {}
           },
           {
-            "name": "T1 · Marco completo",
-            "source_uuid": "c2c6ef1a-5950-4ded-a8cd-6f431b0ca83e",
+            "name": "T1 · Marco diapositivas",
+            "source_uuid": "11a55d4a-e08d-45dc-a678-3a364b3fd96c",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -2561,8 +2561,8 @@
             "private_settings": {}
           },
           {
-            "name": "T1 · Marco mixto",
-            "source_uuid": "f876946c-d56e-4dc4-9b05-f0c8bda17a6e",
+            "name": "T1 · Marco preguntas",
+            "source_uuid": "31194ef1-edcd-493d-ab14-df563d6b406c",
             "visible": true,
             "locked": true,
             "rot": 0,
@@ -4272,7 +4272,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_banner.html",
+        "local_file": "03_HTML/t1_banner.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -4297,7 +4297,7 @@
       "versioned_id": "browser_source",
       "settings": {
         "is_local_file": true,
-        "local_file": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/03_HTML/t1_oficial.html",
+        "local_file": "03_HTML/t1_oficial.html",
         "width": 1920,
         "height": 1080,
         "fps": 30,
@@ -4392,6 +4392,108 @@
       "hotkeys": {},
       "monitoring_type": 0,
       "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T1 · Marco cámara",
+      "uuid": "31ac1cd9-334a-46b8-ae22-5e66a8cc6615",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "03_HTML/t1_marco_camara.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T1 · Marco diapositivas",
+      "uuid": "11a55d4a-e08d-45dc-a678-3a364b3fd96c",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "03_HTML/t1_marco_diapositivas.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
+    },
+    {
+      "prev_ver": 537001986,
+      "name": "T1 · Marco preguntas",
+      "uuid": "31194ef1-edcd-493d-ab14-df563d6b406c",
+      "id": "browser_source",
+      "versioned_id": "browser_source",
+      "settings": {
+        "is_local_file": true,
+        "local_file": "03_HTML/t1_marco_preguntas.html",
+        "width": 1920,
+        "height": 1080,
+        "fps": 30,
+        "fps_custom": true,
+        "shutdown": true,
+        "restart_when_active": true,
+        "reroute_audio": false
+      },
+      "mixers": 0,
+      "sync": 0,
+      "flags": 0,
+      "volume": 1,
+      "balance": 0.5,
+      "enabled": true,
+      "muted": false,
+      "push-to-mute": false,
+      "push-to-mute-delay": 0,
+      "push-to-talk": false,
+      "push-to-talk-delay": 0,
+      "hotkeys": {},
+      "deinterlace_mode": 0,
+      "deinterlace_field_order": 0,
+      "monitoring_type": 0,
+      "private_settings": {}
     }
   ],
   "groups": [],
@@ -4455,7 +4557,7 @@
       "name": "DevFest · Glifos",
       "id": "obs_stinger_transition",
       "settings": {
-        "path": "/Users/mac01/Documents/Codex/2026-10-27/pu/outputs/devfest-arequipa-2026-obs/04_Transiciones/devfest_glifos.webm",
+        "path": "04_Transiciones/devfest_estudio_v5.webm",
         "transition_point": 600,
         "tp_type": 0,
         "audio_monitoring": 0,

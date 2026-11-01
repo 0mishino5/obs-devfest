@@ -1,4 +1,4 @@
-# Configuración privada y estado de cada Mac
+# Configuración privada y estado de cada equipo
 .env
 .env.*
 !.env.example
@@ -20,3 +20,4 @@
 node_modules/
 *.log
 *.tmp
+**/node_modules/
