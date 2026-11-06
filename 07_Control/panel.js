@@ -1,6 +1,6 @@
 let cfg,selected=1,current={},acting=false,ready=false,shot=0,view='program',initialized=false,polling=false,lastImage='',lastAction='';
 const $=s=>document.querySelector(s), tr=()=>cfg.tracks.find(t=>t.id===selected), sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const controls=['speaker','show','hide','replay','motion','transition','refresh','mute','emergency','studio','banner','banner-visible','apply-banner','official','previous','next','audio-device','connect-audio','camera-device','connect-camera'];
+const controls=['speaker','show','hide','replay','motion','transition','refresh','mute','emergency','studio','banner','banner-visible','apply-banner','official','previous','next','audio-device','connect-audio','camera-device','connect-camera','meet-configure'];
 let drafts={}, audioDrafts={}, cameraDrafts={};
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),6000);}
 function draftKey(){return 'devfest-panel-drafts-'+cfg.instance;}
@@ -10,7 +10,7 @@ function startHint(){return cfg?.platform==='windows'?(cfg.demo?'VER_DISENO_WIND
 function clearImage(text='Actualizando imagen de OBS…'){$('#return').style.display='none';$('#empty-return').style.display='flex';$('#empty-return').textContent=text;lastImage='';}
 function setView(v){view=v;shot=0;lastImage='';$('#view-program').classList.toggle('chosen',v==='program');$('#view-preview').classList.toggle('chosen',v==='preview');$('#view-program').setAttribute('aria-pressed',String(v==='program'));$('#view-preview').setAttribute('aria-pressed',String(v==='preview'));$('.screen').dataset.view=v;$('#view-title').textContent=v==='preview'?'2. Revisa antes de mostrar':'Programa actual';$('#view-help').textContent=v==='preview'?'Esta escena aún no cambia el programa. Revísala y pulsa Pasar al programa.':'Esta es la señal actual de OBS. Para preparar otro cambio, elige una escena.';clearImage();}
 function lockControls(){const blocked=!ready||acting;for(const id of controls)$('#'+id).disabled=blocked;$('#track').disabled=acting;$('#take').disabled=blocked||!current.studio||!tr()?.scenes.some(s=>s.name===current.preview)||current.preview===current.program;$('#view-preview').disabled=!ready||!current.studio;$('#view-program').disabled=!ready;document.querySelectorAll('.scene').forEach(b=>b.disabled=blocked);if(current.audioConfigured===false&&current.muted!==false)$('#mute').disabled=true;$('#connect-audio').disabled=blocked||!(current.audioDevices||[]).some(d=>d.id===$('#audio-device').value);$('#connect-camera').disabled=blocked||!(current.cameraDevices||[]).some(d=>d.id===$('#camera-device').value);document.body.setAttribute('aria-busy',String(acting));}
-const messages={speaker:'Nombre seleccionado.',show:'Nombre preparado para las escenas de ponente.',hide:'Nombre oculto.',replay:'Entrada del nombre repetida.',motion:'Movimiento actualizado.',banner:'Mensaje aplicado.',transition:'Transición seleccionada.',mute:'Silencio de micrófono actualizado.', 'audio-connect':'Micrófono conectado y activo en las 13 escenas.','camera-connect':'Cámara conectada y ajustada en las escenas del ponente.',refresh:'Gráficos recargados.',studio:'Modo de trabajo actualizado.',take:'Escena confirmada en programa.'};
+const messages={'meet-configure':'En OBS, elige la ventana de Meet y pulsa Aceptar.',speaker:'Nombre seleccionado.',show:'Nombre preparado para las escenas de ponente.',hide:'Nombre oculto.',replay:'Entrada del nombre repetida.',motion:'Movimiento actualizado.',banner:'Mensaje aplicado.',transition:'Transición seleccionada.',mute:'Silencio de micrófono actualizado.', 'audio-connect':'Micrófono conectado y activo en las 13 escenas.','camera-connect':'Cámara conectada y ajustada en las escenas del ponente.',refresh:'Gráficos recargados.',studio:'Modo de trabajo actualizado.',take:'Escena confirmada en programa.'};
 async function action(name,data={}){
   if(acting||!ready)return false;
   const trackId=selected;acting=true;lockControls();let ok=false;
@@ -18,7 +18,7 @@ async function action(name,data={}){
     let response;
     for(let i=0;i<24;i++){response=await fetch('/api/action',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({track:trackId,action:name,...data}),signal:AbortSignal.timeout(name==='camera-connect'?30000:15000)});if(response.status!==409)break;await sleep(200);}
     const body=await response.json();if(!response.ok)throw Error(body.error||'OBS no confirmó la acción.');
-    lastAction=name;if(name==='scene')setView(data.preview?'preview':'program');if(name==='take')setView('program');if(name==='camera-connect'&&current.studio)setView('preview');
+    lastAction=name;if(name==='scene')setView(data.preview?'preview':'program');if(name==='take')setView('program');if(['camera-connect','meet-configure'].includes(name)&&current.studio)setView('preview');
     toast(name==='scene'?(data.preview?'Escena preparada. Revísala y pulsa Pasar al programa.':'Escena confirmada en programa.'):(messages[name]||'Cambio confirmado.'));shot=0;ok=true;
   }catch(error){toast(error.name==='TimeoutError'?'No se pudo confirmar el cambio a tiempo. Revisa el programa en OBS antes de repetir.':error.message);}
   finally{acting=false;await update();lockControls();}
@@ -90,6 +90,7 @@ async function init(){
   try{drafts=JSON.parse(sessionStorage.getItem(draftKey())||'{}');}catch{drafts={};}
   const query=Number(new URLSearchParams(location.search).get('track'));selected=[1,2].includes(query)?query:1;render();
   $('#track').onchange=e=>{selected=Number(e.target.value);lastAction='';history.replaceState(null,'','?track='+selected);render();sync(current);shot=0;};
+  $('#meet-configure').onclick=()=>action('meet-configure');
   $('#camera-device').onchange=e=>{cameraDrafts[selected]=e.target.value;lockControls();};
   $('#connect-camera').onclick=async()=>{const id=selected;if(await action('camera-connect',{deviceId:$('#camera-device').value})){delete cameraDrafts[id];sync(current);}};
   $('#audio-device').onchange=e=>{audioDrafts[selected]=e.target.value;lockControls();};

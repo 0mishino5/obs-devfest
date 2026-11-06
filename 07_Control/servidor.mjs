@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {OBS} from './obs.mjs';
 import {audioDevices, connectMicrophone} from './audio.mjs';
 import {cameraDevices, cameraNames, connectCamera} from './camera.mjs';
+import {prepareMeet} from './meet.mjs';
 import crypto from 'node:crypto';
 import {packagePlatform, assertHost} from '../06_OBS/plataforma.mjs';
 
@@ -100,6 +101,9 @@ async function action(a) {
       await new Promise(r=>setTimeout(r,80));
     }
     if (a.name==='Desvanecimiento') await obs.call('SetCurrentSceneTransitionDuration',{transitionDuration:300});
+  } else if (a.action==='meet-configure') {
+    if(config.platform!=='macos')throw Error('Este botón prepara la captura de ventana de OBS para macOS.');
+    await prepareMeet(obs,tr,{backupDir:path.join(ROOT,'Respaldos_locales')});
   } else if (a.action==='camera-connect') {
     const result=await connectCamera(obs,tr,a.deviceId,{backupDir:path.join(ROOT,'Respaldos_locales')});
     state[t].cameraInput=cameraNames(tr).input; state[t].cameraDeviceId=result.device.id;state[t].cameraDeviceName=result.device.name;
