@@ -1,0 +1,138 @@
+{
+  "date": "2026-11-01T20:11:48.223Z",
+  "demoOnly": true,
+  "windows": [
+    {
+      "track": 1,
+      "scene": "02 · Diapositivas + ponente",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 24,
+        "y": 320,
+        "w": 600,
+        "h": 337.5
+      }
+    },
+    {
+      "track": 1,
+      "scene": "02 · Diapositivas + ponente",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 648,
+        "y": 148,
+        "w": 1248,
+        "h": 702
+      }
+    },
+    {
+      "track": 1,
+      "scene": "03 · Cámara del ponente",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 112,
+        "y": 110,
+        "w": 1696,
+        "h": 954
+      }
+    },
+    {
+      "track": 1,
+      "scene": "04 · Diapositivas completas",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 112,
+        "y": 110,
+        "w": 1696,
+        "h": 954
+      }
+    },
+    {
+      "track": 1,
+      "scene": "05 · Preguntas y respuestas",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 24,
+        "y": 320,
+        "w": 600,
+        "h": 337.5
+      }
+    },
+    {
+      "track": 1,
+      "scene": "05 · Preguntas y respuestas",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 648,
+        "y": 148,
+        "w": 1248,
+        "h": 702
+      }
+    },
+    {
+      "track": 2,
+      "scene": "02 · Diapositivas + ponente",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 24,
+        "y": 320,
+        "w": 600,
+        "h": 337.5
+      }
+    },
+    {
+      "track": 2,
+      "scene": "02 · Diapositivas + ponente",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 648,
+        "y": 148,
+        "w": 1248,
+        "h": 702
+      }
+    },
+    {
+      "track": 2,
+      "scene": "03 · Cámara del ponente",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 112,
+        "y": 110,
+        "w": 1696,
+        "h": 954
+      }
+    },
+    {
+      "track": 2,
+      "scene": "04 · Diapositivas completas",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 112,
+        "y": 110,
+        "w": 1696,
+        "h": 954
+      }
+    },
+    {
+      "track": 2,
+      "scene": "05 · Preguntas y respuestas",
+      "source": "FUENTE · Cámara del ponente",
+      "rectangle": {
+        "x": 24,
+        "y": 320,
+        "w": 600,
+        "h": 337.5
+      }
+    },
+    {
+      "track": 2,
+      "scene": "05 · Preguntas y respuestas",
+      "source": "FUENTE · Diapositivas",
+      "rectangle": {
+        "x": 648,
+        "y": 148,
+        "w": 1248,
+        "h": 702
+      }
+    }
+  ]
+}

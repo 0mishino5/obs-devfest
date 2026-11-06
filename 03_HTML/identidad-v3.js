@@ -3,9 +3,15 @@
   if(!stage)return;
   const page=location.pathname.split('/').pop()||'';
   const track=Number(document.body.dataset.track||1);
+  const layout=globalThis.DevFestLayout;
+  for(const [prefix,rect]of [['camera',layout.mixed.camera],['slides',layout.mixed.slides],['wide',layout.wide]])
+    for(const [key,value]of Object.entries(rect))stage.style.setProperty('--'+prefix+'-'+key,value+'px');
+  const hole=({x,y,w,h})=>'M'+x+' '+y+'H'+(x+w)+'V'+(y+h)+'H'+x+'Z';
+  const outline=({x,y,w,h})=>'<rect x="'+(x-6)+'" y="'+(y-6)+'" width="'+(w+12)+'" height="'+(h+12)+'" rx="10" fill="none" stroke="#1e1e1e" stroke-width="3"/>';
   const isMessage=!!stage.querySelector('.message');
   const isMixed=!!stage.querySelector('.reference.cutout');
   const isWide=!!stage.querySelector('.wide');
+  const isOfficial=!!stage.querySelector('.official-video');
   const suffix=page.replace(/^t[12]_/, '').replace(/\.html$/, '');
   const scene=document.body.dataset.scene||({
     marco_mixta:'mixta',marco_completa:'camara',marco_camara:'camara',
@@ -25,34 +31,39 @@
     cierre:{number:'11',base:'#ccf6c5',accent:'#ffd427',label:'Lo que construimos nos conecta'}
   };
   const theme=themes[scene]||themes.mixta;
-  document.body.dataset.visual='estudio-v5';
+  document.body.dataset.visual='coherencia-v8';
   document.body.dataset.scene=scene;
-  document.body.classList.add(isMessage?'screen-page':isMixed?'mixed-page':isWide?'wide-page':'overlay-page');
+  document.body.classList.add(isMessage?'screen-page':isMixed?'mixed-page':isWide?'wide-page':isOfficial?'official-page':'overlay-page');
   stage.style.setProperty('--scene-bg',theme.base);
   stage.style.setProperty('--accent',theme.accent);
-  if(!isMessage&&!isMixed&&!isWide)return;
+  const lowerTag=stage.querySelector('.lower .tag');
+  if(lowerTag)lowerTag.innerHTML='<span class="lower-context" data-room></span>';
+  if(!isMessage&&!isMixed&&!isWide&&!isOfficial)return;
 
   // Los videos originales conservan su fondo #f0f0f0 en la escena 13.
   // Las demás pantallas usan el mismo kit gráfico, sin videos con un fondo diferente.
   stage.querySelector('.small-window')?.remove();
   const room=track===1?'R Grandote':'B';
-  const header=document.createElement('header');header.className='brand-header';
-  header.innerHTML='<div class="brand-event"><img src="../01_Identidad/oficial/devfest_2026.png" alt="DevFest 2026"><span>AREQUIPA</span></div><div class="brand-community"><img src="../01_Identidad/oficial/gdg_horizontal.png" alt="GDG Arequipa"><span>@gdgaqp</span></div>';
-  stage.prepend(header);
+  const heroScene=['inicio','cierre','patrocinadores'].includes(scene);
+  if(scene!=='patrocinadores'){
+    const header=document.createElement('header');header.className='brand-header';
+    header.innerHTML=(heroScene?'':'<div class="brand-event"><img src="../01_Identidad/oficial/devfest-arequipa-2026-integrado.svg" alt="DevFest Arequipa 2026"></div>')+'<div class="brand-partners"><span>CON EL APOYO DE NUESTRA COMUNIDAD</span><img src="../01_Identidad/patrocinadores/aliados-horizontal.svg" alt="Google Developer Groups, Tecsup, JetBrains, Women Techmakers y PyLadies"></div>';
+    stage.prepend(header);
+  }
   const spectrum=document.createElement('div');spectrum.className='brand-spectrum';spectrum.setAttribute('aria-hidden','true');
   spectrum.innerHTML='<i></i><i></i><i></i><i></i>';stage.prepend(spectrum);
-  const holes=isWide?'M200 148H1720V996H200Z':isMixed?'M74 380H626V695H74Z M682 219H1864V861H682Z':'';
+  const holes=isWide?hole(layout.wide):isMixed?hole(layout.mixed.camera)+' '+hole(layout.mixed.slides):'';
   const canvasPath='M0 0H1920V1080H0Z '+holes;
   const paints={
     inicio:'<path d="M1200 0H1920V1080H1450L1080 840Z" fill="#4285f4"/><circle cx="1780" cy="1040" r="350" fill="#57caff"/><path d="M0 884H1080V1080H0Z" fill="#ffe7a5"/>',
-    mixta:'<rect x="34" y="190" width="616" height="738" rx="30" fill="#ffe7a5"/><rect x="650" y="188" width="1238" height="720" rx="30" fill="#c3ecf6"/>',
-    camara:'<path d="M0 0H210V1080H0Z" fill="#c3ecf6"/><path d="M1720 0H1920V1080H1720Z" fill="#ff7daf"/>',
-    slides:'<path d="M0 0H200V1080H0Z" fill="#5cdb6d"/><path d="M1720 0H1920V1080H1720Z" fill="#ffe7a5"/>',
-    preguntas:'<rect x="34" y="190" width="616" height="738" rx="30" fill="#ccf6c5"/><rect x="650" y="188" width="1238" height="720" rx="30" fill="#ffe7a5"/>',
+    mixta:'<rect x="12" y="142" width="624" height="770" rx="22" fill="#ffe7a5"/><rect x="636" y="136" width="1272" height="738" rx="22" fill="#c3ecf6"/>',
+    camara:'<path d="M0 0H304V1080H0Z" fill="#c3ecf6"/><path d="M1720 0H1920V1080H1720Z" fill="#ff7daf"/><path d="M0 0H1920V136H0Z" fill="#c3ecf6"/>',
+    slides:'<path d="M0 0H304V1080H0Z" fill="#5cdb6d"/><path d="M1720 0H1920V1080H1720Z" fill="#ffe7a5"/><path d="M0 0H1920V136H0Z" fill="#ccf6c5"/>',
+    preguntas:'<rect x="12" y="142" width="624" height="770" rx="22" fill="#ccf6c5"/><rect x="636" y="136" width="1272" height="738" rx="22" fill="#ffe7a5"/>',
     proxima:'<path d="M1400 0H1920V1080H1400L1230 740Z" fill="#4285f4"/><rect x="96" y="246" width="1216" height="658" rx="34" fill="#1e1e1e"/><rect x="84" y="234" width="1216" height="658" rx="34" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="3"/>',
     espera:'<rect x="302" y="252" width="1328" height="652" rx="80" fill="#1e1e1e"/><rect x="290" y="240" width="1328" height="652" rx="80" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="3"/>',
     almuerzo:'<path d="M1420 0H1920V1080H1160Z" fill="#f8d8d8"/><rect x="96" y="236" width="1136" height="654" rx="36" fill="#1e1e1e"/><rect x="84" y="224" width="1136" height="654" rx="36" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="3"/>',
-    patrocinadores:'<rect x="1186" y="232" width="654" height="660" rx="42" fill="#ccf6c5"/><circle cx="1840" cy="980" r="190" fill="#ff7daf"/>',
+    patrocinadores:'<path d="M0 0H620V1080H0Z" fill="#c3ecf6"/><rect x="1186" y="232" width="654" height="660" rx="42" fill="#ccf6c5"/><circle cx="1840" cy="980" r="190" fill="#ff7daf"/>',
     problemas:'<path d="M1420 0H1920V1080H1420Z" fill="#ffd427"/><rect x="108" y="252" width="1258" height="636" rx="34" fill="#1e1e1e"/><rect x="96" y="240" width="1258" height="636" rx="34" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="3"/>',
     cierre:'<circle cx="70" cy="1040" r="340" fill="#ff7daf"/><circle cx="1840" cy="0" r="340" fill="#ffe7a5"/><rect x="302" y="252" width="1328" height="626" rx="64" fill="#1e1e1e"/><rect x="290" y="240" width="1328" height="626" rx="64" fill="#f0f0f0" stroke="#1e1e1e" stroke-width="3"/>'
   };
@@ -71,7 +82,7 @@
     dots:[1193,872,375,112],blueplus:[1644,803,190,180]
   };
   const layouts={
-    inicio:[['slash',1320,164,240,9],['brackets',1680,230,210,12],['braces',1550,565,275,-12],['angle',1120,600,280,-8],['blueplus',1090,177,110,-9],['dots',1230,895,310,0],['star',1760,45,95,0],['dot',1130,461,55,0]],
+    inicio:[['slash',1330,138,190,9],['brackets',1720,170,160,12],['braces',1670,790,150,-12],['angle',1120,790,220,-8],['blueplus',1090,166,110,-9],['dots',1370,910,250,0],['star',1760,105,85,0]],
     mixta:[['slash',790,12,160,8],['angle',1075,48,155,0],['star',1335,54,80,0],['brackets',-112,210,150,-12],['hash',70,813,138,-6],['line',354,890,180,-12],['cross',1790,877,185,9],['dots',1020,913,200,0],['braces',1790,114,200,-8]],
     camara:[['cross',-70,680,240,10],['brackets',1750,465,195,-7],['dots',1775,920,140,0],['slash',800,-72,206,7],['star',48,182,100,0],['braces',1780,100,145,8]],
     slides:[['brackets',-70,280,235,-8],['brackets',1750,370,240,10],['arrow',1070,-22,200,0],['hash',38,812,124,-6],['cross',1775,780,190,0],['star',70,160,82,0]],
@@ -101,16 +112,36 @@
     card.innerHTML='<span class="room-kicker">'+(scene==='preguntas'?'PREGUNTAS Y RESPUESTAS':'TRACK '+String(track).padStart(2,'0')+' · EN ESCENA')+'</span><strong>Auditorio '+room+'</strong><span class="room-note">'+(scene==='preguntas'?'Abrimos la conversación':'Ideas que se comparten')+'</span>';stage.append(card);
     const edge=document.createElementNS('http://www.w3.org/2000/svg','svg');
     edge.setAttribute('viewBox','0 0 1920 1080');edge.setAttribute('class','frame-outlines');edge.setAttribute('aria-hidden','true');
-    edge.innerHTML='<rect x="66" y="372" width="568" height="331" rx="14" fill="none" stroke="#1e1e1e" stroke-width="3"/><rect x="674" y="211" width="1198" height="658" rx="14" fill="none" stroke="#1e1e1e" stroke-width="3"/><path class="frame-accent" d="M684 211H850M1872 710V820M66 390V465" fill="none" stroke="#4285f4" stroke-width="7" stroke-linecap="round"/>';stage.append(edge);
+    edge.innerHTML=outline(layout.mixed.camera)+outline(layout.mixed.slides)+'<path class="frame-accent" d="M652 142H818M1902 702V812M18 332V407" fill="none" stroke="#4285f4" stroke-width="7" stroke-linecap="round"/>';stage.append(edge);
   }
   if(isWide){
     const edge=document.createElement('div');edge.className='wide-edge';stage.append(edge);
-    const badge=document.createElement('div');badge.className='wide-room';badge.textContent='Track '+track+' · Auditorio '+room;stage.append(badge);
-    const label=document.createElement('div');label.className='wide-context';label.textContent=theme.label;stage.append(label);
+    if(scene==='slides'){
+      const caption=document.createElement('section');caption.className='session-caption';caption.setAttribute('aria-label','Charla actual');
+      caption.innerHTML='<div class="session-person"><span data-room></span><strong data-name></strong></div><div class="session-topic"><span class="session-kicker">TEMA ACTUAL</span><strong data-topic></strong></div>';stage.append(caption);
+    }else{
+      const badge=document.createElement('div');badge.className='wide-room';badge.textContent='Track '+track+' · Auditorio '+room;stage.append(badge);
+      const label=document.createElement('div');label.className='wide-context';label.textContent=theme.label;stage.append(label);
+    }
   }
   if(isMessage){
-    const lines={inicio:'DevFest<br>Arequipa 2026',espera:'Volvemos<br>en breve',almuerzo:'Pausa de<br>almuerzo',cierre:'Gracias por<br>acompañarnos',problemas:'Pausa<br>técnica',patrocinadores:'Gracias por<br>hacerlo posible'};
+    const lines={inicio:'Ideas que<br>nos unen.',espera:'Volvemos<br>en breve',almuerzo:'Pausa de<br>almuerzo',cierre:'Gracias por<br>acompañarnos',problemas:'Pausa<br>técnica',patrocinadores:'Gracias por<br>hacerlo posible'};
     const heading=stage.querySelector('.message h1');if(heading&&lines[scene])heading.innerHTML=lines[scene];
     const signature=document.createElement('div');signature.className='scene-signature';signature.innerHTML='<span>'+theme.number+'</span><b>'+theme.label+'</b>';stage.append(signature);
   }
+  if(heroScene){
+    const hero=document.createElement('div');hero.className='event-hero';
+    hero.innerHTML='<img src="../01_Identidad/oficial/devfest-arequipa-2026-integrado.svg" alt="DevFest Arequipa 2026">';stage.append(hero);
+    if(scene==='inicio'){const copy=stage.querySelector('.message p');if(copy)copy.textContent='Aprendemos, compartimos y construimos en comunidad.';}
+  }
+  if(scene==='patrocinadores'){
+    const wall=stage.querySelector('.sponsors')||document.createElement('section');wall.className='sponsors partner-wall';wall.setAttribute('aria-label','Aliados de DevFest Arequipa 2026');stage.append(wall);
+    const title=stage.querySelector('.message h1');if(title)title.innerHTML='Juntos<br>lo hacemos<br>posible';
+    const thanks=stage.querySelector('.message p');if(thanks)thanks.textContent='Gracias por impulsar esta comunidad.';
+  }
+  if(isOfficial){
+    stage.querySelector('.official-footer')?.remove();
+    const title=document.createElement('div');title.className='official-caption';title.textContent='Ideas, personas y tecnología que nos conectan.';stage.append(title);
+  }
+
 })();

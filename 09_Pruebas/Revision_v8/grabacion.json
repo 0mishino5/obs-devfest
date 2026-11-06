@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-02T02:32:35.535Z",
+  "file": "diseno-coherencia-v8.mp4",
+  "localRecording": true,
+  "streaming": false,
+  "scenes": [
+    "01 · Bienvenida",
+    "02 · Diapositivas + ponente",
+    "03 · Cámara del ponente",
+    "04 · Diapositivas completas",
+    "05 · Preguntas y respuestas",
+    "06 · Próxima charla",
+    "07 · Espera",
+    "08 · Almuerzo",
+    "09 · Patrocinadores",
+    "10 · Problemas técnicos",
+    "11 · Cierre"
+  ],
+  "media": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "982000/32733"
+      }
+    ],
+    "format": {
+      "duration": "65.466000",
+      "size": "9208360"
+    }
+  },
+  "decodedWithoutErrors": true,
+  "visuallyReviewedFrames": [
+    30,
+    700,
+    1510,
+    1900
+  ],
+  "audio": false
+}

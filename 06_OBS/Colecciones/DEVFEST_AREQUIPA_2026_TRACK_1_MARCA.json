@@ -1711,16 +1711,16 @@
             "id": 1,
             "group_item_backup": false,
             "pos": {
-              "x": 74,
-              "y": 380
+              "x": 24,
+              "y": 320
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 552,
-              "y": 315
+              "x": 600,
+              "y": 337.5
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -1754,16 +1754,16 @@
             "id": 2,
             "group_item_backup": false,
             "pos": {
-              "x": 682,
-              "y": 219
+              "x": 648,
+              "y": 148
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 1182,
-              "y": 642
+              "x": 1248,
+              "y": 702
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -2059,16 +2059,16 @@
             "id": 1,
             "group_item_backup": false,
             "pos": {
-              "x": 200,
-              "y": 148
+              "x": 136,
+              "y": 142
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 1520,
-              "y": 848
+              "x": 1648,
+              "y": 927
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -2307,16 +2307,16 @@
             "id": 1,
             "group_item_backup": false,
             "pos": {
-              "x": 200,
-              "y": 148
+              "x": 136,
+              "y": 142
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 1520,
-              "y": 848
+              "x": 1648,
+              "y": 927
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -2498,16 +2498,16 @@
             "id": 1,
             "group_item_backup": false,
             "pos": {
-              "x": 74,
-              "y": 380
+              "x": 24,
+              "y": 320
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 552,
-              "y": 315
+              "x": 600,
+              "y": 337.5
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -2541,16 +2541,16 @@
             "id": 2,
             "group_item_backup": false,
             "pos": {
-              "x": 682,
-              "y": 219
+              "x": 648,
+              "y": 148
             },
             "scale": {
               "x": 1,
               "y": 1
             },
             "bounds": {
-              "x": 1182,
-              "y": 642
+              "x": 1248,
+              "y": 702
             },
             "scale_filter": "bilinear",
             "blend_method": "default",
@@ -4560,7 +4560,7 @@
       "name": "DevFest · Glifos",
       "id": "obs_stinger_transition",
       "settings": {
-        "path": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\04_Transiciones\\devfest_estudio_v5.webm",
+        "path": "C:\\Users\\Usuario\\Documents\\ChatGPT\\dev fest\\obs-devfest-windows\\04_Transiciones\\devfest_estudio_v8.webm",
         "transition_point": 600,
         "tp_type": 0,
         "audio_monitoring": 0,

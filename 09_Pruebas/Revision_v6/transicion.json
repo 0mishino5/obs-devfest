@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-01T19:24:27.605Z",
+  "file": "04_Transiciones/devfest_estudio_v6.webm",
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "frames": 36,
+  "switchAtMs": 600,
+  "decodedAlpha": [
+    [
+      0,
+      0
+    ],
+    [
+      255,
+      255
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "originalAssets": true
+}
