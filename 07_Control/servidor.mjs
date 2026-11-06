@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {OBS} from './obs.mjs';
 import {audioDevices, connectMicrophone} from './audio.mjs';
+import {cameraDevices, cameraNames, connectCamera} from './camera.mjs';
 import crypto from 'node:crypto';
 import {packagePlatform, assertHost} from '../06_OBS/plataforma.mjs';
 
@@ -20,6 +21,7 @@ const obs = new OBS();
 const stateFile = path.join(ROOT, config.demo ? '07_Control/estado-demo.json' : '07_Control/estado-local.json');
 let state = Object.fromEntries([1,2].map(t => [t,{speakerId:config.tracks[t-1].speakers[0].id, visible:false, revision:0, motion:true, banner:'GDG Arequipa · @gdgaqp · #DevFestArequipa2026', bannerVisible:true}]));
 try { const old=JSON.parse(fs.readFileSync(stateFile)); for (const t of [1,2]) state[t]={...state[t],...old[t],visible:false}; } catch {}
+for(const tr of config.tracks)if(state[tr.id].cameraInput)tr.camera=state[tr.id].cameraInput;
 const persist = () => fs.writeFileSync(stateFile, JSON.stringify(state, null, 2), {mode:0o600});
 const track = t => config.tracks.find(x => x.id === Number(t));
 const json = (res, code, obj) => { res.writeHead(code, {'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'}); res.end(JSON.stringify(obj)); };
@@ -98,6 +100,10 @@ async function action(a) {
       await new Promise(r=>setTimeout(r,80));
     }
     if (a.name==='Desvanecimiento') await obs.call('SetCurrentSceneTransitionDuration',{transitionDuration:300});
+  } else if (a.action==='camera-connect') {
+    const result=await connectCamera(obs,tr,a.deviceId,{backupDir:path.join(ROOT,'Respaldos_locales')});
+    state[t].cameraInput=cameraNames(tr).input; state[t].cameraDeviceId=result.device.id;state[t].cameraDeviceName=result.device.name;
+    state[t].cameraWidth=result.width;state[t].cameraHeight=result.height;state[t].cameraSceneCount=result.sceneCount;
   } else if (a.action==='audio-connect') {
     const result=await connectMicrophone(obs,tr,a.deviceId,{backupDir:path.join(ROOT,'Respaldos_locales')});
     state[t].audioDeviceId=result.device.id; state[t].audioDeviceName=result.device.name;
@@ -132,10 +138,20 @@ async function status() {
     const selectedDevice=devices.find(d=>d.id===audioDeviceId);
     audioConfigured=!!selectedDevice; audioDeviceName=selectedDevice?.name||state[tr.id].audioDeviceName||'';
   }
+  let cameras=[], cameraDeviceId='', cameraDeviceName='', cameraConfigured=false, cameraError='';
+  if(tr)try{
+    const names=cameraNames(tr);
+    cameras=await cameraDevices(obs,tr);
+    const cameraInput=await obs.call('GetInputSettings',{inputName:names.input});
+    cameraDeviceId=cameraInput.inputSettings[cameraInput.inputKind==='macos-avcapture'?'device':'uid']||'';
+    const selected=cameras.find(d=>d.id===cameraDeviceId);cameraDeviceName=selected?.name||state[tr.id].cameraDeviceName||'';
+    const items=(await obs.call('GetSceneItemList',{sceneName:names.scene})).sceneItems;
+    cameraConfigured=!!selected&&items.some(i=>i.sourceName===names.input&&i.sceneItemEnabled);
+  }catch(e){cameraError=e.message;}
   const settings=await obs.call('GetVideoSettings');
   const stats=await obs.call('GetStats');
   const video={width:settings.outputWidth,height:settings.outputHeight,fps:settings.fpsNumerator/settings.fpsDenominator};
-  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,audioConfigured,audioDevices:devices,audioDeviceId,audioDeviceName,video,activeFps:stats.activeFps,state};
+  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,audioConfigured,audioDevices:devices,audioDeviceId,audioDeviceName,cameraDevices:cameras,cameraDeviceId,cameraDeviceName,cameraConfigured,cameraError,video,activeFps:stats.activeFps,state};
 }
 const types={'.jpeg':'image/jpeg','.gif':'image/gif','.mp4':'video/mp4','.ttf':'font/ttf','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.webm':'video/webm','.md':'text/plain; charset=utf-8'};
 const server=http.createServer(async(req,res)=>{
