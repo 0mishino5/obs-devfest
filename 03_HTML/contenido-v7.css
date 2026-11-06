@@ -1,0 +1,17 @@
+/* Cabecera discreta y contenido 16:9 con más superficie útil. */
+#stage .brand-header{left:24px;right:24px;top:8px;height:80px;gap:24px}
+#stage .brand-event{flex:0 0 174px;width:174px;height:80px;padding:4px 6px;border-radius:12px;box-shadow:0 3px 0 #1e1e1e}
+#stage .brand-partners{flex:0 1 1080px;height:76px;padding:3px 16px 4px;border-radius:12px;box-shadow:0 3px 0 #1e1e1e;margin-left:auto;gap:1px}
+.brand-partners>span{font-size:10px;line-height:12px;letter-spacing:1.3px}
+.brand-partners>img{height:54px}
+.room-card{left:44px;top:178px;width:560px}
+.room-card strong{font-size:39px;margin:10px 0 8px}
+.room-kicker{font-size:17px}
+.room-note{font-size:22px}
+.lower.compact{left:var(--camera-x);top:calc(var(--camera-y) + var(--camera-h) + 20px);width:var(--camera-w)}
+.lower:not(.compact){left:calc(var(--wide-x) + 24px);top:calc(var(--wide-y) + var(--wide-h) - 128px);width:calc(var(--wide-w) - 48px);height:104px;padding:16px 28px 16px 34px}
+.lower .lower-brand{width:132px;height:64px}
+.wide-edge{left:calc(var(--wide-x) - 6px);top:calc(var(--wide-y) - 6px);width:calc(var(--wide-w) + 12px);height:calc(var(--wide-h) + 12px);border-radius:10px}
+.wide-room,.wide-context{left:224px;right:auto;max-width:565px;background:transparent;border:0;border-radius:0;padding:0}
+.wide-room{top:22px;font-size:18px}
+.wide-context{top:52px;font-size:16px}

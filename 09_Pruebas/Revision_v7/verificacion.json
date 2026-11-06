@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-01T20:12:24.328Z",
+  "version": "contenido-v7",
+  "rejectedSymbolRemoved": true,
+  "tracks": [
+    {
+      "track": 1,
+      "scenes": 13,
+      "resources": 16,
+      "longName": "Cristians Alberto Bregante Tintaya",
+      "motionPauseAndResume": true
+    },
+    {
+      "track": 2,
+      "scenes": 13,
+      "resources": 16,
+      "longName": "Henry Keniding Tarazona Lazaro",
+      "motionPauseAndResume": true
+    }
+  ],
+  "guidesUnchanged": true,
+  "before": {
+    "activeFps": 30.000000300000007,
+    "availableDiskSpace": 65823.7578125,
+    "averageFrameRenderTime": 5.082029,
+    "cpuUsage": 0.9733634320725977,
+    "memoryUsage": 210.4453125,
+    "outputSkippedFrames": 0,
+    "outputTotalFrames": 1958,
+    "renderSkippedFrames": 32,
+    "renderTotalFrames": 89424,
+    "webSocketSessionIncomingMessages": 4,
+    "webSocketSessionOutgoingMessages": 4
+  },
+  "after": {
+    "activeFps": 30.000000300000007,
+    "availableDiskSpace": 65819.62890625,
+    "averageFrameRenderTime": 3.670219,
+    "cpuUsage": 1.3800437208594418,
+    "memoryUsage": 256.92578125,
+    "outputSkippedFrames": 0,
+    "outputTotalFrames": 1958,
+    "renderSkippedFrames": 72,
+    "renderTotalFrames": 92595,
+    "webSocketSessionIncomingMessages": 223,
+    "webSocketSessionOutgoingMessages": 227
+  }
+}

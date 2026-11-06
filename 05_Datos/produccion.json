@@ -221,8 +221,29 @@
       ]
     }
   ],
-  "sponsors": [],
-  "version": "marca-2026-v2",
+  "sponsors": [
+    {
+      "name": "Google Developer Groups",
+      "file": "gdg-arequipa.svg"
+    },
+    {
+      "name": "Tecsup",
+      "file": "tecsup.svg"
+    },
+    {
+      "name": "JetBrains",
+      "file": "jetbrains.svg"
+    },
+    {
+      "name": "Women Techmakers",
+      "file": "women-techmakers.svg"
+    },
+    {
+      "name": "PyLadies",
+      "file": "pyladies.svg"
+    }
+  ],
+  "version": "identidad-local-2026-v6",
   "localOnly": true,
   "animations": [
     {
@@ -231,5 +252,10 @@
       "file": "04_Transiciones/Oficiales/DF26_URL.mp4",
       "onAir": true
     }
-  ]
+  ],
+  "brand": {
+    "logo": "01_Identidad/oficial/devfest-arequipa-2026-integrado.svg",
+    "sponsorBand": "01_Identidad/patrocinadores/aliados-horizontal.svg",
+    "source": "10_Referencias/Identidad_Local_2026/SPEAKER.pdf"
+  }
 }

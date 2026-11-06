@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-01T20:56:20.356Z",
+  "demoOnly": true,
+  "tracks": [
+    {
+      "track": 1,
+      "updatesWithoutReload": true,
+      "first": "Brian Benjamin Pareja Meruvia",
+      "second": "Yancel Salinas",
+      "topic": "Descubre cómo Google Cloud te ayuda a encontrar qué tool MCP le está costando tiempo a tu agente",
+      "transitionPoint": 600
+    },
+    {
+      "track": 2,
+      "updatesWithoutReload": true,
+      "first": "Nelzon Jorge Apaza Apaza",
+      "second": "Homer Lopez Vidal",
+      "topic": "Del Vibe Coding al SDD: Cómo construir Web Apps robustas con Firebase Genkit, Gemini y Devin",
+      "transitionPoint": 600
+    }
+  ]
+}
