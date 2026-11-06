@@ -37,7 +37,7 @@ export class OBS {
           p.d.requestStatus.result ? q.resolve(p.d.responseData || {}) : q.reject(new Error(`${p.d.requestType}: ${p.d.requestStatus.comment || p.d.requestStatus.code}`));
         }
       };
-      ws.onerror = () => { clearTimeout(timer); ws.close(); reject(new Error('No se pudo conectar con OBS en este equipo.')); };
+      ws.onerror = () => { clearTimeout(timer); ws.onerror = null; ws.close(); reject(new Error('No se pudo conectar con OBS en este equipo.')); };
       ws.onclose = event => {
         clearTimeout(timer); this.connected = false; this.connecting = null;
         for (const q of this.pending.values()) { clearTimeout(q.timer); q.reject(new Error('OBS se desconectó.')); }

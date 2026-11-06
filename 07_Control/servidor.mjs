@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {OBS} from './obs.mjs';
+import {audioDevices, connectMicrophone} from './audio.mjs';
 import crypto from 'node:crypto';
 import {packagePlatform, assertHost} from '../06_OBS/plataforma.mjs';
 
@@ -97,11 +98,15 @@ async function action(a) {
       await new Promise(r=>setTimeout(r,80));
     }
     if (a.name==='Desvanecimiento') await obs.call('SetCurrentSceneTransitionDuration',{transitionDuration:300});
+  } else if (a.action==='audio-connect') {
+    const result=await connectMicrophone(obs,tr,a.deviceId,{backupDir:path.join(ROOT,'Respaldos_locales')});
+    state[t].audioDeviceId=result.device.id; state[t].audioDeviceName=result.device.name;
+    state[t].audioSceneCount=result.sceneCount;
   } else if (a.action==='mute') {
     if (!a.muted) {
       const input=await obs.call('GetInputSettings',{inputName:tr.audio});
       const device=input.inputSettings?.device_id;
-      if (!device || device==='disabled') throw new Error('Selecciona primero la consola o interfaz en la entrada Audio de sala de OBS.');
+      if (!(await audioDevices(obs,tr)).some(d=>d.id===device)) throw new Error('Conecta el micrófono y pulsa Conectar micrófono primero.');
     }
     await obs.call('SetInputMute',{inputName:tr.audio,inputMuted:!!a.muted});
   } else if (a.action==='refresh') {
@@ -118,16 +123,19 @@ async function status() {
   const studio=await obs.call('GetStudioModeEnabled');
   const transition=(await obs.call('GetCurrentSceneTransition')).transitionName;
   let muted=true;
-  let audioConfigured=false;
+  let audioConfigured=false, devices=[], audioDeviceId='', audioDeviceName='';
   if (tr) {
     muted=(await obs.call('GetInputMute',{inputName:tr.audio})).inputMuted;
     const input=await obs.call('GetInputSettings',{inputName:tr.audio});
-    audioConfigured=!!input.inputSettings?.device_id&&input.inputSettings.device_id!=='disabled';
+    devices=await audioDevices(obs,tr);
+    audioDeviceId=input.inputSettings?.device_id||'';
+    const selectedDevice=devices.find(d=>d.id===audioDeviceId);
+    audioConfigured=!!selectedDevice; audioDeviceName=selectedDevice?.name||state[tr.id].audioDeviceName||'';
   }
   const settings=await obs.call('GetVideoSettings');
   const stats=await obs.call('GetStats');
   const video={width:settings.outputWidth,height:settings.outputHeight,fps:settings.fpsNumerator/settings.fpsDenominator};
-  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,audioConfigured,video,activeFps:stats.activeFps,state};
+  return {version:config.version,connected:true,collection:c.currentSceneCollectionName,track:tr?.id,program:s.currentProgramSceneName,preview:s.currentPreviewSceneName,streaming:stream.outputActive,recording:rec.outputActive,studio:studio.studioModeEnabled,transition,muted,audioConfigured,audioDevices:devices,audioDeviceId,audioDeviceName,video,activeFps:stats.activeFps,state};
 }
 const types={'.jpeg':'image/jpeg','.gif':'image/gif','.mp4':'video/mp4','.ttf':'font/ttf','.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.webm':'video/webm','.md':'text/plain; charset=utf-8'};
 const server=http.createServer(async(req,res)=>{

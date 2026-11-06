@@ -13,7 +13,7 @@ function temporary(t) {
   t.after(()=>fs.rmSync(dir,{recursive:true,force:true}));
   return dir;
 }
-const original = id => readJSON(path.join(ROOT,`06_OBS/Colecciones/DEVFEST_AREQUIPA_2026_TRACK_${id}_MARCA.json`));
+const original = id => {const track=readJSON(path.join(ROOT,'05_Datos/produccion.json')).tracks.find(t=>t.id===id);return readJSON(path.join(ROOT,'06_OBS/Colecciones',track.collection+'.json'));};
 function fixture(t) {
   const root=temporary(t);
   for (const dir of ['05_Datos','06_OBS/Colecciones']) fs.mkdirSync(path.join(root,dir),{recursive:true});

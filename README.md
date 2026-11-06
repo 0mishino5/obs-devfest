@@ -15,3 +15,7 @@ La composición es 1080p30, con 13 escenas de producción por track y 15 nombres
 Verifica los archivos con `node 09_Pruebas/verificar.mjs` y las pruebas de compatibilidad con `node --test 09_Pruebas/compatibilidad.test.mjs`. Los ensayos de la Mac original se conservan como historial; no acreditan pruebas del hardware de este equipo.
 
 [Guía de operación](08_Guias/OPERACION.md) · [Compatibilidad y límites](08_Guias/PLATAFORMAS.md)
+
+## Micrófono en un clic
+
+Enchufa el micrófono, abre el panel, selecciónalo y pulsa **Conectar micrófono**. La elección se recuerda en cada Mac y se comparte la misma entrada en las 13 escenas, incluidas las pausas. **Silenciar micrófono** lo apaga en todas. [Instrucciones sencillas](08_Guias/MICROFONO_FACIL.md).

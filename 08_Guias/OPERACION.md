@@ -39,7 +39,7 @@ En `FUENTE · Cámara del ponente`, abre las propiedades de `T1/T2 · Cámara 1 
 
 En `FUENTE · Diapositivas`, configura `Diapositivas HDMI · configurar` o la fuente `Diapositivas Windows/macOS · configurar` si la presentación se ejecuta en este equipo. En Windows selecciona una ventana concreta; en Mac concede a OBS permiso de grabación de pantalla. Activa una sola entrada y oculta `Prueba diapositivas`. Ajusta al lienzo sin deformar ni recortar texto.
 
-`T1/T2 · Audio de sala` usa WASAPI en Windows y CoreAudio en Mac. Está sin dispositivo seleccionado y silenciada. Selecciona la consola/interfaz y escucha una grabación antes de activarla. Evita duplicar el audio con micrófonos internos o cámaras. Comprueba sincronía labial, ausencia de saturación y permisos de micrófono. Las escenas de pausa no incluyen audio de sala.
+`T1/T2 · Audio de sala` usa WASAPI en Windows y CoreAudio en Mac. Está sin dispositivo seleccionado y silenciada. Selecciona la consola/interfaz y escucha una grabación antes de activarla. Evita duplicar el audio con micrófonos internos o cámaras. Comprueba sincronía labial, ausencia de saturación y permisos de micrófono. El botón Conectar micrófono comparte esta misma entrada en las 13 escenas, incluidas las pausas. Silenciar micrófono la apaga en todas a la vez. Consulta [Micrófono fácil](MICROFONO_FACIL.md).
 
 ## Escenas y controles
 
@@ -51,7 +51,7 @@ Con Modo Estudio activo, un botón prepara la vista previa y **Pasar al programa
 
 Selecciona ponente y usa Mostrar, Ocultar o Repetir entrada. Solo se emite el nombre. La franja admite 140 caracteres. Movimiento controla HTML y videos; las transiciones se eligen por separado. DevFest · Glifos dura 1,2 segundos con corte a 600 ms; también hay Desvanecimiento y Corte. Pausa técnica cambia al programa directamente.
 
-El selector de track bloquea controles si no coincide con la colección activa en OBS. El panel nunca inicia ni detiene transmisiones. El botón de audio solo cambia el silencio de la entrada preparada.
+El selector de track bloquea controles si no coincide con la colección activa en OBS. El panel nunca inicia ni detiene transmisiones. Conectar micrófono recuerda el dispositivo seleccionado y lo activa en las 13 escenas. El botón de silencio lo apaga o reactiva en todas.
 
 ## Datos y respaldos
 

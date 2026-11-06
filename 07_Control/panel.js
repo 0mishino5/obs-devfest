@@ -1,7 +1,7 @@
 let cfg,selected=1,current={},acting=false,ready=false,shot=0,view='program',initialized=false,polling=false,lastImage='',lastAction='';
 const $=s=>document.querySelector(s), tr=()=>cfg.tracks.find(t=>t.id===selected), sleep=ms=>new Promise(r=>setTimeout(r,ms));
-const controls=['speaker','show','hide','replay','motion','transition','refresh','mute','emergency','studio','banner','banner-visible','apply-banner','official','previous','next'];
-let drafts={};
+const controls=['speaker','show','hide','replay','motion','transition','refresh','mute','emergency','studio','banner','banner-visible','apply-banner','official','previous','next','audio-device','connect-audio'];
+let drafts={}, audioDrafts={};
 function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>$('#toast').classList.remove('show'),6000);}
 function draftKey(){return 'devfest-panel-drafts-'+cfg.instance;}
 function saveDrafts(){try{sessionStorage.setItem(draftKey(),JSON.stringify(drafts));}catch{}}
@@ -9,8 +9,8 @@ function editBanner(){drafts[selected]={text:$('#banner').value,visible:$('#bann
 function startHint(){return cfg?.platform==='windows'?(cfg.demo?'VER_DISENO_WINDOWS.cmd':'INICIAR_PANEL.cmd'):'INICIAR_PANEL.command';}
 function clearImage(text='Actualizando imagen de OBS…'){$('#return').style.display='none';$('#empty-return').style.display='flex';$('#empty-return').textContent=text;lastImage='';}
 function setView(v){view=v;shot=0;lastImage='';$('#view-program').classList.toggle('chosen',v==='program');$('#view-preview').classList.toggle('chosen',v==='preview');$('#view-program').setAttribute('aria-pressed',String(v==='program'));$('#view-preview').setAttribute('aria-pressed',String(v==='preview'));$('.screen').dataset.view=v;$('#view-title').textContent=v==='preview'?'2. Revisa antes de mostrar':'Programa actual';$('#view-help').textContent=v==='preview'?'Esta escena aún no cambia el programa. Revísala y pulsa Pasar al programa.':'Esta es la señal actual de OBS. Para preparar otro cambio, elige una escena.';clearImage();}
-function lockControls(){const blocked=!ready||acting;for(const id of controls)$('#'+id).disabled=blocked;$('#track').disabled=acting;$('#take').disabled=blocked||!current.studio||!tr()?.scenes.some(s=>s.name===current.preview)||current.preview===current.program;$('#view-preview').disabled=!ready||!current.studio;$('#view-program').disabled=!ready;document.querySelectorAll('.scene').forEach(b=>b.disabled=blocked);if(current.audioConfigured===false)$('#mute').disabled=true;document.body.setAttribute('aria-busy',String(acting));}
-const messages={speaker:'Nombre seleccionado.',show:'Nombre preparado para las escenas de ponente.',hide:'Nombre oculto.',replay:'Entrada del nombre repetida.',motion:'Movimiento actualizado.',banner:'Mensaje aplicado.',transition:'Transición seleccionada.',mute:'Silencio de audio actualizado.',refresh:'Gráficos recargados.',studio:'Modo de trabajo actualizado.',take:'Escena confirmada en programa.'};
+function lockControls(){const blocked=!ready||acting;for(const id of controls)$('#'+id).disabled=blocked;$('#track').disabled=acting;$('#take').disabled=blocked||!current.studio||!tr()?.scenes.some(s=>s.name===current.preview)||current.preview===current.program;$('#view-preview').disabled=!ready||!current.studio;$('#view-program').disabled=!ready;document.querySelectorAll('.scene').forEach(b=>b.disabled=blocked);if(current.audioConfigured===false&&current.muted!==false)$('#mute').disabled=true;$('#connect-audio').disabled=blocked||!(current.audioDevices||[]).some(d=>d.id===$('#audio-device').value);document.body.setAttribute('aria-busy',String(acting));}
+const messages={speaker:'Nombre seleccionado.',show:'Nombre preparado para las escenas de ponente.',hide:'Nombre oculto.',replay:'Entrada del nombre repetida.',motion:'Movimiento actualizado.',banner:'Mensaje aplicado.',transition:'Transición seleccionada.',mute:'Silencio de micrófono actualizado.', 'audio-connect':'Micrófono conectado y activo en las 13 escenas.',refresh:'Gráficos recargados.',studio:'Modo de trabajo actualizado.',take:'Escena confirmada en programa.'};
 async function action(name,data={}){
   if(acting||!ready)return false;
   const trackId=selected;acting=true;lockControls();let ok=false;
@@ -48,7 +48,19 @@ function sync(status){
   for(const [id,n]of [['step-select',1],['step-preview',2],['step-take',3]])$('#'+id).classList.toggle('current',ready&&step===n);
   document.querySelectorAll('.scene').forEach(button=>{const program=ready&&status.program===button.dataset.scene,preview=ready&&status.studio&&status.preview===button.dataset.scene&&!program;button.classList.toggle('active',program);button.classList.toggle('preview',preview);button.querySelector('.scene-state').textContent=program?'EN PROGRAMA':preview?'PREPARADA':'';});
   const state=status.state?.[selected];if(state){$('#speaker').value=state.speakerId;$('#speaker-name').textContent=tr().speakers.find(p=>p.id===state.speakerId)?.name||'';const usesName=['02','03','05'].includes(status.program?.slice(0,2));$('#lower-status').textContent=state.visible?(usesName?'Nombre visible en el programa.':'Nombre preparado; se verá en cámara, composición mixta o preguntas.'):'Nombre oculto.';$('#motion').checked=state.motion!==false;const draft=drafts[selected];if(draft){$('#banner').value=draft.text;$('#banner-visible').checked=draft.visible;$('#banner-help').textContent='Cambios sin aplicar. Pulsa Aplicar mensaje para guardarlos.';$('#banner-help').classList.add('draft');}else{if(document.activeElement!==$('#banner'))$('#banner').value=state.banner||'';$('#banner-visible').checked=state.bannerVisible!==false;$('#banner-help').textContent='El texto y la casilla se guardan al pulsar Aplicar mensaje.';$('#banner-help').classList.remove('draft');}}
-  $('#audio-status').textContent=!status.connected?'Audio de sala: esperando conexión con OBS.':status.audioConfigured===false?'Sin dispositivo de audio seleccionado. Configura la entrada en OBS.':status.muted?'Audio de sala silenciado.':'Audio de sala activo.';$('#mute').textContent=!status.connected?'Audio de sala':status.muted?'Activar audio de sala':'Silenciar audio de sala';
+  const devices=status.audioDevices||[], remembered=state?.audioDeviceId;
+  const preferred=audioDrafts[selected]||((status.audioDeviceId&&status.audioDeviceId!=='disabled')?status.audioDeviceId:remembered)||'';
+  const sameName=devices.filter(d=>d.name===state?.audioDeviceName);
+  const matched=devices.find(d=>d.id===preferred)||(!audioDrafts[selected]&&sameName.length===1?sameName[0]:null);
+  const signature=JSON.stringify([devices,preferred,matched?.id]);
+  if($('#audio-device').dataset.devices!==signature){
+    const options=[Object.assign(document.createElement('option'),{value:'',textContent:'Selecciona tu micrófono'})];
+    for(const d of devices)options.push(Object.assign(document.createElement('option'),{value:d.id,textContent:d.name}));
+    if(preferred&&!matched)options.push(Object.assign(document.createElement('option'),{value:preferred,textContent:(state?.audioDeviceName||'Micrófono guardado')+' (desconectado)',disabled:true}));
+    $('#audio-device').replaceChildren(...options);$('#audio-device').value=matched?.id||preferred;$('#audio-device').dataset.devices=signature;
+  }
+  $('#audio-status').textContent=!status.connected?'Esperando conexión con OBS.':!status.audioConfigured?(devices.length?'Elige tu micrófono y pulsa Conectar micrófono.':'Enchufa el micrófono para que aparezca aquí.'):(status.audioDeviceName+' · '+(status.muted?'Silenciado.':'Activo.')+(state?.audioSceneCount?' Configurado en '+state.audioSceneCount+' escenas.':''));
+  $('#mute').textContent=status.muted?'Activar micrófono':'Silenciar micrófono';
   const video=status.video;$('#quality').textContent=!status.connected?'Salida de OBS: sin conexión.':video?`Salida OBS: ${video.width} × ${video.height} · ${Number(video.fps).toFixed(0)} FPS${status.activeFps?' · actual '+Number(status.activeFps).toFixed(1)+' FPS':''}`:'Salida de OBS: revisa resolución y FPS en OBS.';
   if(!ready)clearImage('Esperando la conexión y colección correctas de OBS.');else{const name=view==='preview'?status.preview:status.program;if(lastImage&&lastImage!==selected+':'+view+':'+name)clearImage();}
   lockControls();
@@ -66,6 +78,8 @@ async function init(){
   try{drafts=JSON.parse(sessionStorage.getItem(draftKey())||'{}');}catch{drafts={};}
   const query=Number(new URLSearchParams(location.search).get('track'));selected=[1,2].includes(query)?query:1;render();
   $('#track').onchange=e=>{selected=Number(e.target.value);lastAction='';history.replaceState(null,'','?track='+selected);render();sync(current);shot=0;};
+  $('#audio-device').onchange=e=>{audioDrafts[selected]=e.target.value;lockControls();};
+  $('#connect-audio').onclick=async()=>{const id=selected;if(await action('audio-connect',{deviceId:$('#audio-device').value})){delete audioDrafts[id];sync(current);}};
   $('#speaker').onchange=e=>action('speaker',{speakerId:e.target.value});
   for(const [id,n]of [['previous',-1],['next',1]])$('#'+id).onclick=()=>{const list=tr().speakers,index=list.findIndex(p=>p.id===$('#speaker').value);action('speaker',{speakerId:list[(index+n+list.length)%list.length].id});};
   for(const name of ['show','hide','replay','refresh'])$('#'+name).onclick=()=>action(name);
