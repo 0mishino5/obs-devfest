@@ -1,0 +1,36 @@
+/* Marca integrada, un protagonista por escena y metadatos fuera de las diapositivas. */
+#stage .brand-header{top:10px;height:120px;align-items:flex-start}
+#stage .brand-event{flex:0 0 250px;width:250px;height:120px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+#stage .brand-event>img{object-fit:contain}
+#stage .brand-partners{margin-top:0}
+.event-hero{background:transparent;border:0;border-radius:0;box-shadow:none;padding:0}
+[data-scene="inicio"] .event-hero{left:1140px;top:370px;width:700px;height:340px;padding:0}
+[data-scene="inicio"] .message{top:300px;width:1020px}
+[data-scene="inicio"] .message h1{font-size:122px;line-height:1.05;letter-spacing:-4px}
+[data-scene="inicio"] .message p{max-width:880px;font-size:32px}
+[data-scene="cierre"] .event-hero{left:740px;top:265px;width:440px;height:210px;padding:0;background:transparent;border:0;border-radius:0;box-shadow:none}
+[data-scene="cierre"] .message{top:485px;height:300px}
+[data-scene="cierre"] .message h1{font-size:88px}
+.lower .tag{font-size:19px;padding-left:24px}
+.lower-context{display:block;font:18px Mono,monospace}
+.wide-room,.wide-context{left:308px;max-width:465px}
+.wide-room{top:34px;font-size:17px}
+.wide-context{top:68px;font-size:19px}
+.session-caption{position:absolute;inset:0;z-index:6;pointer-events:none}
+.session-person{position:absolute;left:308px;top:24px;width:465px;display:flex;flex-direction:column;gap:6px}
+.session-person>span{font:15px Mono,monospace;color:var(--ink)}
+.session-person>strong{display:block;font-size:27px;line-height:1.2;font-weight:700;letter-spacing:-.3px;white-space:nowrap}
+.session-topic{position:absolute;left:308px;right:28px;top:99px;height:30px;display:flex;align-items:center;gap:16px;min-width:0}
+.session-kicker{flex:0 0 auto;font:12px Mono,monospace;letter-spacing:.7px}
+.session-topic>strong{display:block;flex:1;min-width:0;font-size:22px;line-height:1.2;font-weight:400;white-space:nowrap}
+[data-scene="patrocinadores"] .event-hero{left:100px;top:175px;width:455px;height:218px;padding:0}
+[data-scene="patrocinadores"] .message{left:100px;top:438px;width:500px;height:410px}
+[data-scene="patrocinadores"] .message .eyebrow{display:none}
+[data-scene="patrocinadores"] .message h1{font-size:74px;line-height:1.06;letter-spacing:-2.4px;margin-bottom:25px;color:var(--ink)}
+[data-scene="patrocinadores"] .message p{font-size:29px;line-height:1.35;color:var(--ink)}
+[data-scene="patrocinadores"] .partner-wall{top:196px}
+[data-scene="patrocinadores"] .screen-meta{display:none}
+[data-scene="patrocinadores"] .scene-signature{display:none}
+[data-scene="patrocinadores"] .floating-layer{opacity:.32}
+.demo-slide .demo-label{top:116px;font-size:28px;letter-spacing:1px}
+.demo-slide .demo-panel{top:230px;height:650px}

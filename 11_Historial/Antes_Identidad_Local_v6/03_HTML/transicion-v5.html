@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>DevFest · Cortinilla de marca</title>
+<style>
+@font-face{font-family:Mono;src:url('../01_Identidad/fuentes/GoogleSansMono-Regular.ttf')}
+*{box-sizing:border-box}html,body{margin:0;width:1920px;height:1080px;overflow:hidden;background:transparent}
+#panel{position:absolute;inset:0;background:#f0f0f0;overflow:hidden}
+.blue{position:absolute;right:0;top:0;width:480px;height:1080px;background:#c3ecf6}
+.yellow{position:absolute;left:0;top:0;width:360px;height:1080px;background:#ffe7a5}
+.logo{position:absolute;left:520px;top:390px;width:880px;height:auto}
+.location{position:absolute;left:0;top:640px;width:1920px;text-align:center;font:32px Mono,monospace;letter-spacing:4px;color:#1e1e1e}
+.glyph{position:absolute}.glyph svg{width:100%;height:100%;overflow:hidden;display:block}
+.brackets{left:120px;top:325px;width:265px;height:231px;transform:rotate(-9deg)}
+.slash{left:1510px;top:185px;width:220px;height:224px;transform:rotate(8deg)}
+.cross{left:1520px;top:750px;width:205px;height:204px;transform:rotate(-8deg)}
+.dots{left:670px;top:855px;width:360px;height:107px}
+.star{position:absolute;left:1200px;top:155px;width:100px;height:100px}
+</style></head><body><main id="panel">
+<div class="blue"></div><div class="yellow"></div>
+<img class="logo" src="../01_Identidad/oficial/devfest_2026.png" alt="DevFest 2026">
+<div class="location">AREQUIPA · GDG AREQUIPA</div>
+<div class="glyph brackets"><svg viewBox="84 94 282 246"><image href="../01_Identidad/oficial/glifos_color.png" width="1920" height="1080"/></svg></div>
+<div class="glyph slash"><svg viewBox="776 94 310 316"><image href="../01_Identidad/oficial/glifos_color.png" width="1920" height="1080"/></svg></div>
+<div class="glyph cross"><svg viewBox="892 735 252 251"><image href="../01_Identidad/oficial/glifos_color.png" width="1920" height="1080"/></svg></div>
+<div class="glyph dots"><svg viewBox="1193 872 375 112"><image href="../01_Identidad/oficial/glifos_color.png" width="1920" height="1080"/></svg></div>
+<svg class="star" viewBox="0 0 100 100"><path d="M50 3V97M3 50H97M17 17L83 83M17 83L83 17" stroke="#1e1e1e" stroke-width="3"/></svg>
+</main><script>
+const frame=Math.max(0,Math.min(35,Number(new URLSearchParams(location.search).get('frame')||0)));
+const t=frame/35,ease=v=>1-Math.pow(1-Math.max(0,Math.min(1,v)),3);
+const offset=t<.46?-1920*(1-ease(t/.46)):t<=.57?0:1920*ease((t-.57)/.43);
+const panel=document.getElementById('panel');panel.style.transform='translateX('+Math.round(offset)+'px)';
+if(frame===0||frame===35)panel.style.visibility='hidden';
+</script></body></html>

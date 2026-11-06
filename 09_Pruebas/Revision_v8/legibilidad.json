@@ -1,0 +1,246 @@
+{
+  "date": "2026-11-01T20:54:21.071Z",
+  "renderer": "OBS Browser Source",
+  "cases": [
+    {
+      "url": "/03_HTML/t1_inicio.html?preview=1",
+      "scene": "inicio",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_mixta.html?preview=1",
+      "scene": "mixta",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_camara.html?preview=1",
+      "scene": "camara",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_espera.html?preview=1",
+      "scene": "espera",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_almuerzo.html?preview=1",
+      "scene": "almuerzo",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_patrocinadores.html?preview=1",
+      "scene": "patrocinadores",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_problemas.html?preview=1",
+      "scene": "problemas",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_cierre.html?preview=1",
+      "scene": "cierre",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_preguntas.html?preview=1",
+      "scene": "preguntas",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_proxima.html?preview=1",
+      "scene": "proxima",
+      "track": 1,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-01",
+      "scene": "slides",
+      "track": 1,
+      "name": "Brian Benjamin Pareja Meruvia",
+      "topic": "De Unity a Android XR: migrando una plataforma de entrenamiento industrial",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-02",
+      "scene": "slides",
+      "track": 1,
+      "name": "Angelica Oliveira",
+      "topic": "Workshop De Stitch a Studio: Flujo de desarrollo Android completo asistido por IA",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-03",
+      "scene": "slides",
+      "track": 1,
+      "name": "Sebastian Antonio Riveros Carbajal",
+      "topic": "EL USO LAS HERRAMIENTAS DE IA PARA PROGRAMACION",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-04",
+      "scene": "slides",
+      "track": 1,
+      "name": "Cristians Alberto Bregante Tintaya",
+      "topic": "Build with Modern Web Guidance",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-05",
+      "scene": "slides",
+      "track": 1,
+      "name": "Christian Benjamín Flores Copa",
+      "topic": "Como construir un sistema de evals productivo para agentes de IA",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-06",
+      "scene": "slides",
+      "track": 1,
+      "name": "Yancel Salinas",
+      "topic": "Descubre cómo Google Cloud te ayuda a encontrar qué tool MCP le está costando tiempo a tu agente",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t1_marco_diapositivas.html?preview=1&speaker=t1-07",
+      "scene": "slides",
+      "track": 1,
+      "name": "Cristhian Taipe",
+      "topic": "¿Qué tan fácil es hackear tu aplicación?",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_inicio.html?preview=1",
+      "scene": "inicio",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_mixta.html?preview=1",
+      "scene": "mixta",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_camara.html?preview=1",
+      "scene": "camara",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_espera.html?preview=1",
+      "scene": "espera",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_almuerzo.html?preview=1",
+      "scene": "almuerzo",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_patrocinadores.html?preview=1",
+      "scene": "patrocinadores",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_problemas.html?preview=1",
+      "scene": "problemas",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_cierre.html?preview=1",
+      "scene": "cierre",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_preguntas.html?preview=1",
+      "scene": "preguntas",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_proxima.html?preview=1",
+      "scene": "proxima",
+      "track": 2,
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-01",
+      "scene": "slides",
+      "track": 2,
+      "name": "Nelzon Jorge Apaza Apaza",
+      "topic": "Viaje a otra dimensión analítica: Un recorrido por el presente y futuro de Immersive Analytics",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-02",
+      "scene": "slides",
+      "track": 2,
+      "name": "Jose Flores Chamba",
+      "topic": "Tu web ya no habla con humanos: bienvenido a WebMCP",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-03",
+      "scene": "slides",
+      "track": 2,
+      "name": "Mayra Rodriguez",
+      "topic": "From Chaos to Control: Diseñando AIs que divaguen menos y ejecuten más",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-04",
+      "scene": "slides",
+      "track": 2,
+      "name": "Shirley Ramos",
+      "topic": "No More Lorem Ipsum: CSS para interfaces con contenido generado por IA",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-05",
+      "scene": "slides",
+      "track": 2,
+      "name": "Jose Luis Monroy Vilcahuaman",
+      "topic": "El Futuro de la Calidad de Software",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-06",
+      "scene": "slides",
+      "track": 2,
+      "name": "Henry Keniding Tarazona Lazaro",
+      "topic": "ADK en acción: Crea tu primer agente y orquesta flujos agénticos",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-07",
+      "scene": "slides",
+      "track": 2,
+      "name": "Homer Lopez Vidal",
+      "topic": "Del Vibe Coding al SDD: Cómo construir Web Apps robustas con Firebase Genkit, Gemini y Devin",
+      "errors": []
+    },
+    {
+      "url": "/03_HTML/t2_marco_diapositivas.html?preview=1&speaker=t2-08",
+      "scene": "slides",
+      "track": 2,
+      "name": "Diego Alonso",
+      "topic": "Google Cloud, Gemini, MCP, N8N para flujos automáticos",
+      "errors": []
+    }
+  ]
+}
