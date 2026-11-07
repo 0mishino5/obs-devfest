@@ -14,3 +14,19 @@ El sonido continúa por el micrófono de sala configurado. Conectar la cámara n
 Si no aparece el iPhone, comprueba la conexión y vuelve a abrir el selector. Si aparece pero no entrega imagen, revisa el aviso en el iPhone y el permiso de cámara de OBS. El panel informa del error y restaura los ajustes anteriores.
 
 Cada Mac recuerda sus propios dispositivos. Las preferencias y respaldos locales no se publican con el código.
+
+## Si al reconectar aparece la pantalla del iPhone
+
+El iPhone puede aparecer en OBS como distintos dispositivos de vídeo. En el diagnóstico del 6 de noviembre de 2026, la entrada llamada **iPhone** mostraba la pantalla de inicio del teléfono; la entrada anterior **Cámara de iPhone** ya no estaba disponible. Se confirmó una selección de captura de pantalla; no se determinó la causa por la que dejó de estar disponible Cámara de continuidad. Los nombres pueden variar: comprueba siempre la imagen en Vista previa.
+
+Para recuperar la cámara:
+
+1. En el iPhone, abre **Ajustes → General → AirPlay y Continuidad** (o **AirPlay y Handoff**) y activa **Cámara de continuidad**.
+2. Comprueba que ambos equipos usan la misma cuenta de Apple, con Wi-Fi y Bluetooth activos.
+3. Conecta el iPhone al Mac y acepta **Confiar** si lo solicita. Colócalo en horizontal y bloquea su pantalla.
+4. Cuando vuelva a aparecer la cámara en el selector del panel, selecciónala y pulsa **Conectar cámara**.
+5. Confirma en Vista previa que se ve la imagen del objetivo antes de pulsar **Pasar al programa**.
+
+Si el selector solo ofrece el dispositivo que muestra las aplicaciones del teléfono, todavía no está disponible la cámara de continuidad. El panel recuerda el dispositivo seleccionado, pero no puede activar esa función dentro del iPhone. Esta guía documenta el diagnóstico y los pasos manuales; no incorpora detección automática del contenido de la imagen.
+
+Fuente: [Cámara de continuidad: usar el iPhone como cámara web para el Mac — Apple](https://support.apple.com/es-es/102546).
